@@ -1,14 +1,20 @@
 # Holicity
 Holicity is a user based platform for social networking to promote a greener earth.
 ***
-ERD: in trello need to link
+## ERD: 
+in trello need to link
 ***
-CHD:
+## CHD:
 ***
-WireFrame:
+## WireFrame:
 ***
 [Trello](https://trello.com/b/aycojdND/holicity)
 ***
-Tech Used:
+### Tech Used:
+
 ***
-Social Links:
+### Social Links:
+[github](https://github.com/Neoj1sec142)   
+[linkedIn](https://www.linkedin.com/in/markharmon142/)   
+[twitter](https://twitter.com/ManicNeo142)   
+[portfolio](neo_portfolio_142.surge.sh)
