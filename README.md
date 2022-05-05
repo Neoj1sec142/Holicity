@@ -12,6 +12,13 @@ Holicity is a user based platform for social networking to promote a greener ear
 [Trello](https://trello.com/b/aycojdND/holicity)
 ***
 ### Tech Used:
+* React
+* React-Router
+* Axios
+* Python
+* Django
+* PostgreSQL
+* Django REST Framework
 
 ***
 ### Social Links:
