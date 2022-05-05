@@ -38,14 +38,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <Nav
           authenticated={authenticated}
           user={user}
           handleLogOut={handleLogOut}
         />
-      </header>
-      <body>
+      </div>
+      <div className='app_main'>
       <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -75,7 +75,7 @@ function App() {
           />
         </Routes>
         
-      </body>
+      </div>
     </div>
   );
 }
