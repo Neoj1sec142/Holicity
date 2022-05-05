@@ -28,7 +28,7 @@ const Search = () => {
         <div className='search'>
             <form onSubmit={handleSubmit}>
                 <input 
-                    className='search-user-bar'
+                    className='search-form'
                     onChange={(e) => handleChange(e)}
                     value={query}
                     maxLength='255'
