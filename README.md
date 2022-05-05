@@ -2,9 +2,10 @@
 Holicity is a user based platform for social networking to promote a greener earth.
 ***
 ## ERD: 
-in trello need to link
+![ERD](./client/src/assets/ERD%20Start.png)
 ***
 ## CHD:
+![CHD](./client/src/assets/CHD%20Start.png)
 ***
 ## WireFrame:
 ***
