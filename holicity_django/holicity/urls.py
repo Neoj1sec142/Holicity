@@ -3,7 +3,7 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
-  path('users/', views.UserList.as_view(), name='user_list'),
+  path('', views.UserList.as_view(), name='user_list'),
   path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
   path('followers/', views.FollowerList.as_view(), name='follower_list'),
   path('followers/<int:pk>', views.FollowerDetail.as_view(), name='follower_detail'),
