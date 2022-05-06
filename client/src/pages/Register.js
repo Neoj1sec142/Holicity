@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   let navigate = useNavigate()
-  const [formValues, setFormValues] = useState({
+  const [newUser, setNewUser] = useState({
     name: '',
     username: '',
     email: '',
@@ -15,18 +15,18 @@ const Register = () => {
   })
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    setNewUser({ ...newUser, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      fullname: formValues.fullname,
-      username: formValues.username,
-      email: formValues.email,
-      password: formValues.password
+      fullname: newUser.fullname,
+      username: newUser.username,
+      email: newUser.email,
+      password: newUser.password
     })
-    setFormValues({
+    setNewUser({
       fullName: '',
       username: '',
       email: '',
@@ -37,7 +37,7 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
+    <div className="home-container col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
@@ -47,7 +47,7 @@ const Register = () => {
               name="fullname"
               type="text"
               placeholder="Full Name.."
-              value={formValues.fullname}
+              value={newUser.fullname}
               maxlength='255'
               required
             />
@@ -59,7 +59,7 @@ const Register = () => {
               name="username"
               type="username"
               placeholder="Username.."
-              value={formValues.username}
+              value={newUser.username}
               maxlength='25'
               required
             />
@@ -71,7 +71,7 @@ const Register = () => {
               name="email"
               type="email"
               placeholder="Email@email.com"
-              value={formValues.email}
+              value={newUser.email}
               maxlength='255'
               required
             />
@@ -84,7 +84,7 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="************"
-              value={formValues.password}
+              value={newUser.password}
               maxlength='255'
               required
             />
@@ -96,16 +96,16 @@ const Register = () => {
               type="password"
               name="confirmPassword"
               placeholder="************"
-              value={formValues.confirmPassword}
+              value={newUser.confirmPassword}
               maxlength='255'
               required
             />
           </div>
           <button
             disabled={
-              !formValues.email ||
-              (!formValues.password &&
-                formValues.confirmPassword === formValues.password)
+              !newUser.email ||
+              (!newUser.password &&
+                newUser.confirmPassword === newUser.password)
             }
           >
             Sign In

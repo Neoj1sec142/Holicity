@@ -6,26 +6,26 @@ const SignIn = (props) => {
 
   let navigate = useNavigate()
   
-  const [formValues, setFormValues] = useState({ username: '', password: '' })
+  const [user, setUser] = useState({ username: '', password: '' })
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await SignInUser(formValues)
+    const payload = await SignInUser(user)
 
     console.log("handleSubmit PAYLOAD", payload)
     
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    setFormValues({ username: '', password: '' })
+    setUser({ username: '', password: '' })
     navigate('/feed')
   }
 
   return (
-    <div className="signin col">
+    <div className="home-container col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
@@ -35,7 +35,7 @@ const SignIn = (props) => {
               name="username"
               type="username"
               placeholder="Username.."
-              value={formValues.username}
+              value={user.username}
               maxLength='255'
               required
             />
@@ -47,12 +47,12 @@ const SignIn = (props) => {
               type="password"
               name="password"
               placeholder="*********"
-              value={formValues.password}
+              value={user.password}
               maxLength='255'
               required
             />
           </div>
-          <button disabled={!formValues.username || !formValues.password}>
+          <button disabled={!user.username || !user.password}>
             Sign In
           </button>
           <h5>Dont Have an Account? <Link to={'/register'}>Click Here to Register</Link></h5>

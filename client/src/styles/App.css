@@ -74,13 +74,13 @@ html {
 }
 .card-overlay {
   position: relative;
-  border: 12px solid var(--primary-button-hover); 
-  width: 55%;
-  margin: 12px;
-  padding: 1em;
+  border: 7px solid var(--primary-button-hover); 
+  width: 60%;
+  margin: 10px;
+  padding: 1.5em;
   border-radius: 15px;
-  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3); 
-  background-color: rgba(255,255,255,1);
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.3); 
+  background-color: rgb(191, 179, 179);
   background: var(--custom-gradient);
 }
 .input-wrapper{
@@ -92,7 +92,7 @@ html {
 .details{
   display: flex;
   height: 400px;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -100,4 +100,9 @@ html {
   border-radius: 8px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
   background: var(--custom-gradient);
+}
+.home-container{
+  margin-block: 15%;
+  display:flex;
+  justify-content: center;
 }
