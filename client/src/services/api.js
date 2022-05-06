@@ -2,8 +2,8 @@ import axios from 'axios'
 
 export const BASE_URL = 'http://localhost:8000' 
 //export const BASE_URL = 'https://holicity.herokuapp.com' 
-const Client = axios.create({ baseURL: BASE_URL })
-export const axiosInstance = axios.create({
+//const Client = axios.create({ baseURL: BASE_URL })
+export const Client = axios.create({
     baseURL: BASE_URL,
     timeout: 5000,
     headers: {
@@ -16,7 +16,7 @@ export const axiosInstance = axios.create({
 
 Client.interceptors.request.use(
     (config)=>{
-        const token = localStorage.getItem('token')
+        const token = localStorage.getItem('access_token')
         if (token) {
             config.headers['authorization'] = `Bearer ${token}`
         }
