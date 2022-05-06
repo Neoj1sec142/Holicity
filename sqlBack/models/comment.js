@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    rating: DataTypes.NUMBER
+    rating: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Comment',

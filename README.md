@@ -16,9 +16,10 @@ Holicity is a user based platform for social networking to promote a greener ear
 * React-Router
 * Axios
 * Python
-* Django
+* Express
+* Django(possible)
 * PostgreSQL
-* Django REST Framework
+* Django REST Framework(possible)
 
 ***
 ### Social Links:
