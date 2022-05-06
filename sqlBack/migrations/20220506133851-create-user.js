@@ -30,6 +30,9 @@ module.exports = {
       bio: {
         type: Sequelize.TEXT
       },
+      profileImg: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
