@@ -15,6 +15,7 @@ const Register = () => {
   })
 
   const handleChange = (e) => {
+    console.log(e)
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
@@ -27,7 +28,7 @@ const Register = () => {
       password: formValues.password
     })
     setFormValues({
-      fullname: '',
+      fullName: '',
       username: '',
       email: '',
       password: '',

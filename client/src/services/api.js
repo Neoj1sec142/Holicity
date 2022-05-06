@@ -1,22 +1,13 @@
-import axios from 'axios'
+import Axios from 'axios'
 
-export const BASE_URL = 'http://localhost:8000' 
-//export const BASE_URL = 'https://holicity.herokuapp.com' 
-//const Client = axios.create({ baseURL: BASE_URL })
-export const Client = axios.create({
-    baseURL: BASE_URL,
-    timeout: 5000,
-    headers: {
-        'Authorization': "JWT " + localStorage.getItem('access_token'),
-        'Content-Type': 'application/json',
-        'accept': 'application/json'
-    }
-})
+export const BASE_URL = 'http://localhost:3001' 
+//export const BASE_URL = 'https://foodle-back.herokuapp.com' 
+const Client = Axios.create({ baseURL: BASE_URL })
 
 
 Client.interceptors.request.use(
     (config)=>{
-        const token = localStorage.getItem('access_token')
+        const token = localStorage.getItem('token')
         if (token) {
             config.headers['authorization'] = `Bearer ${token}`
         }

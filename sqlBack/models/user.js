@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       }),
       User.belongsToMany(models.User, {
         as: 'following',
-        thorugh: models.Follower,
+        through: models.Follower,
         foreignKey: 'followerId'
       }),
       // Post Associations
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    fullName: {
+    fullname: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false
