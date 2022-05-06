@@ -6,6 +6,7 @@ const Browse = () => {
     const [query, setQuery] = useState('')
     const [browsed, setBrowsed] = useState([])
     const [posts, setPosts] = useState([])
+    // const [types, setTypes] = useState([])
 
     useEffect(() => {
         const getPosts = async () => {
