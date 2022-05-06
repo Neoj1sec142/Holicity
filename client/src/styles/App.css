@@ -7,8 +7,8 @@
   --link-color-primary: #1d201f;
   --secondary-bg: #e1efe6;
   --link-color-secondary: #e1efe6;
-  --primary-button-hover: #3c7d79;
-  --custom-gradient: linear-gradient(323deg, rgb(104 193 197 / 75%) 0%, rgba(255,255,255,.75) 100%);
+  --primary-button-hover: #a8bbb9a4;
+  --custom-gradient: linear-gradient(323deg, rgba(180, 190, 190, 0.75) 0%, rgba(255,255,255,.75) 100%);
   /* --custom-background-image: url('../assets/'); */
 }
 
@@ -35,6 +35,9 @@ input {
 header, footer {
   max-height: 4em;
   display: flex;
+  /* flex-direction: column; */
+  border-bottom: 2px solid black;
+  border-top: 5px solid black;
   justify-content: space-between;
   align-items: center;
   background-color: var(--primary-bg);
@@ -43,4 +46,58 @@ header, footer {
 nav {
   margin-right: 1em;
   display: flex;
+}
+
+nav a, nav h3 {
+  text-decoration-color: var(--primary-bg);
+  margin: auto 1em;
+  color: var(--link-color-primary);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--link-color-secondary);
+  text-decoration-color: var(--link-color-primary);
+}
+
+html, .App, * {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.card-overlay {
+  position: relative;
+  border: 12px solid var(--primary-button-hover); 
+  width: 55%;
+  margin: 12px;
+  padding: 1em;
+  border-radius: 15px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3); 
+  background-color: rgba(255,255,255,1);
+  background: var(--custom-gradient);
+}
+.input-wrapper{
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.details{
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+  background: var(--custom-gradient);
 }
