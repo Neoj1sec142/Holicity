@@ -9,6 +9,7 @@ import Feed from './pages/Feed'
 import Create from './pages/Create'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
+import Details from './pages/Details'
 //import Settings from './components/Settings.jsx'
 import './styles/App.css';
 
@@ -63,6 +64,9 @@ function App() {
           />
           <Route path="/profile/:username"
             element={<Profile user={user} authenticated={authenticated} />}
+          />
+          <Route path="/details/:post_id"
+            element={<Details user={user} authenticated={authenticated} />}
           />
           {/* <Route path="/profile/:username/update"
             element={<Settings user={user} authenticated={authenticated} />}

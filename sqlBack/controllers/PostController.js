@@ -28,6 +28,7 @@ const GetPostsByUserId = async (req, res) => {
 
 const GetPostById = async (req, res) => {
   try {
+    console.log('here')
     const post = await Post.findOne({
       where: {id: req.params.post_id},
       include: [
@@ -37,7 +38,7 @@ const GetPostById = async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id','comment','rating','userId'],
+          attributes: ['id','description','rating','userId'],
           include: [
             {
               model: User,
