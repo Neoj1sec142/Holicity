@@ -6,11 +6,11 @@ import SignIn from './pages/SignIn'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import Feed from './pages/Feed'
-import Post from './pages/Post'
+import Create from './pages/Create'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
 import Settings from './components/Settings.jsx'
-
+import './styles/App.css';
 
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
             element={<Settings user={user} authenticated={authenticated} />}
           />
           <Route path="/create"
-            element={<Post user={user} authenticated={authenticated} />}
+            element={<Create user={user} authenticated={authenticated} />}
           />
           <Route path="/search"
             element={<Search user={user} authenticated={authenticated} />}

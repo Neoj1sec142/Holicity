@@ -15,7 +15,6 @@ const Register = () => {
   })
 
   const handleChange = (e) => {
-    console.log(e)
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
