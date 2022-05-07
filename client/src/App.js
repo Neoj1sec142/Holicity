@@ -9,6 +9,7 @@ import Feed from './pages/Feed'
 import Create from './pages/Create'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
+import Footer from './components/Footer'
 import Details from './pages/Details'
 //import Settings from './components/Settings.jsx'
 import './styles/App.css';
@@ -79,6 +80,9 @@ function App() {
           />
         </Routes>
         
+      </div>
+      <div className='footer'>
+        <Footer />
       </div>
     </div>
   );

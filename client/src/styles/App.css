@@ -39,7 +39,7 @@ header, footer {
   /* flex-direction: column; */
   border-bottom: 2px solid black;
   border-top: 5px solid black;
-  justify-content: space-between;
+  
   align-items: center;
   background-color: var(--primary-bg);
 }
@@ -47,6 +47,7 @@ header, footer {
 nav {
   margin-right: 1em;
   display: flex;
+  
 }
 
 nav a, nav h3 {
@@ -62,6 +63,22 @@ nav a, nav h3 {
 nav a:hover {
   color: var(--link-color-secondary);
   text-decoration-color: var(--link-color-primary);
+}
+
+#footer-items{
+  border-bottom: 2px solid black;
+  border: 5px solid black;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+.footer img{
+  max-height: 3em;
+  flex-direction: row;
+  /* bottom: 0; */
+  
 }
 
 html, .App, * {

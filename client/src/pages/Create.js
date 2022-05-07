@@ -39,7 +39,7 @@ const Create = (props) => {
                 </div>
                 <div className='input-wrapper'>
                     <h4>~ Share a Pic ~</h4>
-                    <input 
+                    <textarea 
                         onChange={handleChange}
                         type='url'
                         value={post.image}
@@ -50,7 +50,7 @@ const Create = (props) => {
                 </div>
                 <div className='input-wrapper'>
                     <h4>~ Pass on Wisdom ~</h4>
-                    <input 
+                    <textarea 
                         onChange={handleChange}
                         type='text'
                         value={post.description}
