@@ -35,9 +35,46 @@ const Profile = (props) => {
         }
         getProfilePosts()
     }, [profileUser])
-    return(
-        <div></div>
-    )
+
+    const handleClick = async () => {
+        if(followers.filter((fol) => fol.id === props.user.id).length === 0){
+            await Follow(user.id, props.user.id)
+            setBtn(true)
+        }else{
+            await Unfollow(user.id, props.user.id)
+            setBtn(false)
+        }
+    }
+
+    if(props.authenticated && user.id){
+        return(
+            <div className='profile'>
+                <div className='profile-board'>
+                    {user.profileImg ? 
+                        <div></div>
+                        :
+                        <div></div>
+                    
+                    }
+                    <div className='profile-info'>
+                        <h2>{user.username}</h2>
+                        <h4>Name: {user.fullName}</h4>
+                        <h4>Email: {user.email}</h4>
+                        {props.user.username === profileUser ?
+                            <button>Edit Profile</button>
+                            : <button onClick={(e) => handleClick(e)}>
+                                    { btn ? 'Unfollow' : 'Follow'}
+                                </button>}
+                    </div>
+                </div>
+                <div className='profile-posts'>
+
+                </div>
+            </div>
+        )
+    } else {
+        return (<div className='loading'>Loading....</div>)
+    }
 }
 
 export default Profile
