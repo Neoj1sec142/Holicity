@@ -7,13 +7,14 @@
   --link-color-primary: #1d201f;
   --secondary-bg: #e1efe6;
   --link-color-secondary: #e1efe6;
-  --primary-button-hover: #a8bbb9a4;
-  --custom-gradient: linear-gradient(323deg, rgba(180, 190, 190, 0.75) 0%, rgba(255,255,255,.75) 100%);
+  --primary-button-hover: #575d5ca4;
+  --custom-gradient: linear-gradient(323deg, rgba(71, 73, 73, 0.75) 0%, rgba(255,255,255,.75) 100%);
   /* --custom-background-image: url('../assets/'); */
 }
 
 button {
-  border: 0;
+  
+  border: 1px solid black;
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0.8em 1.2em;
@@ -88,13 +89,22 @@ html {
   justify-content: center;
   align-items: center;
 }
+.feed{
+  text-align: center;
+  border-right: 120px solid black;
+  border-left: 120px solid black;
+  background-image: url('../assets/greener_1.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .details{
   display: flex;
   height: 400px;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin: 0 auto;
   padding: 1em;
   border-radius: 8px;
