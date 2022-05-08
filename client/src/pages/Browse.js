@@ -12,10 +12,17 @@ const Browse = () => {
         const getPosts = async () => {
             const posts = await GetPosts()
             setPosts(posts)
-            
+
         }
+        // const getTypes = async () => {
+        //     const type = GetPos
+        // }
         getPosts()
     }, [])
+    let arr = []
+    posts.map((post) => {
+        arr.push(post.type)
+    })
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -24,7 +31,7 @@ const Browse = () => {
         const res = posts.filter((item) => item.type.toLowerCase().includes(browsed.toLowerCase()))
         setBrowsed(res)
     }
-
+    console.log(arr)
     return(
         <div className='browse'>
             <form onSubmit={handleSubmit}>
@@ -41,7 +48,7 @@ const Browse = () => {
                 <div>Search Res</div>
                 :
                 <div>
-                    {}
+                    
                 </div>
             }
 

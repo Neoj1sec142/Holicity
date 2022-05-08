@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import Details from './pages/Details'
 //import Settings from './components/Settings.jsx'
 import './styles/App.css';
+import Browse from './pages/Browse';
 
 
 function App() {
@@ -77,6 +78,9 @@ function App() {
           />
           <Route path="/search"
             element={<Search user={user} authenticated={authenticated} />}
+          />
+          <Route path="/browse"
+            element={<Browse user={user} authenticated={authenticated} />}
           />
         </Routes>
         

@@ -27,6 +27,7 @@ export const CreatePost = async (id, post) => {
     try{
         const data = {
             title: post.title,
+            type: post.type,
             image: post.image,
             description: post.description,
             url: post.url,

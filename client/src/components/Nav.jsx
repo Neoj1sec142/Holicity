@@ -16,6 +16,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
           </label> */}
             <nav className='menu'>
               <Link className='links' to="/feed">Feed</Link>
+              <Link className='links' to="/browse">Browse</Link>
               <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
               <Link className='links' to="/create">Create</Link>
               <Link className='links' to="/search">Search</Link>

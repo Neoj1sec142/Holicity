@@ -7,6 +7,7 @@ const Create = (props) => {
     const navigate = useNavigate()
     const [post, setPost] = useState({
         title: '',
+        type: '',
         image: '',
         description: '',
         url: ''
@@ -33,6 +34,18 @@ const Create = (props) => {
                         value={post.title}
                         name='title'
                         placeholder='~Name Goes Here~'
+                        maxLength='255'
+                        required
+                    />
+                </div>
+                <div className='input-wrapper'>
+                    <h4>~ What is your Vibe ~</h4>
+                    <input 
+                        onChange={handleChange}
+                        type='text'
+                        value={post.type}
+                        name='type'
+                        placeholder='~Type Goes Here~'
                         maxLength='255'
                         required
                     />
