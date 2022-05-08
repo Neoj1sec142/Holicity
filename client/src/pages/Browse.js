@@ -22,6 +22,7 @@ const Browse = () => {
     let arr = []
     posts.map((post) => {
         arr.push(post.type)
+        return arr
     })
 
     const handleChange = (e) => {
@@ -32,29 +33,36 @@ const Browse = () => {
         setBrowsed(res)
     }
     console.log(arr)
-    return(
-        <div className='browse'>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    className='browse-form'
-                    onChange={(e) => handleChange(e)}
-                    value={query}
-                    maxLength='255'
-                    name='posts'
-                    placeholder="Browse the Energy.."
-                />
-            </form>
-            {browsed ? 
-                <div>Search Res</div>
-                :
-                <div>
-                    
-                </div>
-            }
+    if(posts){
+        return(
+            <div className='browse'>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                        className='browse-form'
+                        onChange={(e) => handleChange(e)}
+                        value={query}
+                        maxLength='255'
+                        name='posts'
+                        placeholder="Browse the Energy.."
+                    />
+                </form>
+                {!browsed ? 
+                    <div>Search Res</div>
+                    :
+                    <div>
+                        <h2>Check The Energy in the Room</h2>
+                        <ul>
+                        {posts.map((post) => (
+                            <li>{post.type}</li>
+                        ))}
+                        </ul> 
+                    </div>
+                }
 
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 export default Browse
