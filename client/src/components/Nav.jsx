@@ -4,16 +4,28 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
-      <nav>
-        <h3>Logged in as {user.username}!</h3>
-        <Link to="/feed">Feed</Link>
-        <Link to={`/profile/${user.username}`}>Profile</Link>
-        <Link to="/create">Create</Link>
-        <Link to="/search">Search</Link>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
-        </Link>
-      </nav>
+      
+      <section className='burger-menu'>
+        <nav id='navbar' className='navbar' role='navigation'>
+          <input id='toggle' type='checkbox' htmlFor="toggle"/>
+          <h3>Logged in as {user.username}!</h3>
+          <label className='hamburger'>
+            <div className='head'></div>
+            <div className='body'></div>
+            <div className='feet'></div>
+          </label>
+            <nav className='menu'>
+              <Link className='links' to="/feed">Feed</Link>
+              <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
+              <Link className='links' to="/create">Create</Link>
+              <Link className='links' to="/search">Search</Link>
+              <Link className='links' onClick={handleLogOut} to="/">
+                Sign Out
+              </Link>
+            </nav>
+        </nav>
+      </section>
+      
     )
   }
 

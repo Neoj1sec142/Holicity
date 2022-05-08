@@ -50,7 +50,7 @@ nav {
   
 }
 
-nav a, nav h3 {
+/* nav a, nav h3 {
   text-decoration-color: var(--primary-bg);
   margin: auto 1em;
   color: var(--link-color-primary);
@@ -63,7 +63,7 @@ nav a, nav h3 {
 nav a:hover {
   color: var(--link-color-secondary);
   text-decoration-color: var(--link-color-primary);
-}
+} */
 
 #footer-items{
   border-bottom: 2px solid black;
@@ -132,4 +132,99 @@ html {
   margin-block: 15%;
   display:flex;
   justify-content: center;
+}
+
+
+/* hanmburger menu css */
+.hamburger{
+  height: 40px;
+  margin: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: center;
+  z-index: 120;
+}
+
+.hamburger div{
+  background-color: rgba(41, 39, 39, 0.751);
+  position: relative;
+  width: 140px;
+  height: 5px;
+  margin-top: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#toggle:unchecked{
+  display:none;
+}
+
+#toggle:checked + .hamburger .head{
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-top: 22.5px;
+}
+
+#toggle:checked + .hamburger .body{
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-top: -5px;
+}
+
+#toggle:checked + .hamburger .feet{
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+#toggle:checked ~ .menu {
+  height: 350px;
+}
+
+.burger-menu{
+  height: 100%;
+}
+.menu{
+  width: 100%;
+  background-color: #02173F;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-rows: 1fr repeat(4, 0.5fr);
+  grid-row-gap: 25px;
+  padding: 0;
+  list-style: none; 
+  clear: both;
+  width: auto;
+  text-align: center;
+  height: 0px;
+  overflow: hidden;
+  transition: height .4s ease;
+  z-index: 120;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu .links:first-child{
+  margin-top: 40px;
+}
+.menu .links:last-child{
+  margin-bottom: 40px;
+}
+.links{
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  font: 700 20px 'Oswald', sans-serif;
+}
+Link{
+  color: #fff;
+  text-decoration: none;
+}
+
+.links:hover{
+  background-color: #fff;
+  color: rgb(61, 61, 61);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
