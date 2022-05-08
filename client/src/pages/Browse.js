@@ -6,12 +6,13 @@ const Browse = () => {
     const [query, setQuery] = useState('')
     const [browsed, setBrowsed] = useState([])
     const [posts, setPosts] = useState([])
-    // const [types, setTypes] = useState([])
+    const [types, setTypes] = useState([])
 
     useEffect(() => {
         const getPosts = async () => {
             const posts = await GetPosts()
             setPosts(posts)
+            
         }
         getPosts()
     }, [])
@@ -36,6 +37,13 @@ const Browse = () => {
                     placeholder="Browse the Energy.."
                 />
             </form>
+            {browsed ? 
+                <div>Search Res</div>
+                :
+                <div>
+                    {}
+                </div>
+            }
 
 
         </div>

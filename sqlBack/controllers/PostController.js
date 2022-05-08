@@ -28,7 +28,7 @@ const GetPostsByUserId = async (req, res) => {
 
 const GetPostById = async (req, res) => {
   try {
-    console.log('here')
+    // console.log('here')
     const post = await Post.findOne({
       where: {id: req.params.post_id},
       include: [
@@ -49,8 +49,36 @@ const GetPostById = async (req, res) => {
       ]
     })
     res.send(post)
-  } catch (error) {
-    throw error
+  } catch (err) {
+    throw err
+  }
+}
+
+const GetPostByType = async (req,res) => {
+  try{
+    // console.log("GET TYPE BACK")
+    const posts = await Post.findAll({
+      where: {type: req.params.type},
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'username']
+        },
+        {
+          model: Comment, 
+          attributes: ['id', 'description', 'rating', 'userId'],
+          include: [
+            {
+              model: User,
+              attributes: ['id', 'username']
+            }
+          ]
+        }
+      ]
+    })
+    res.send(posts)
+  }catch(err){
+    throw err
   }
 }
 
@@ -60,8 +88,8 @@ const CreatePost = async (req, res) => {
       { ...req.body,  userId: req.params.user_id}
     )
       res.send(newPost)
-  } catch (error) {
-    throw error
+  } catch (err) {
+    throw err
   }
 }
 
@@ -75,8 +103,8 @@ const UpdatePost = async (req, res) => {
       }
     )
     res.send(updatedPost)
-  } catch (error) {
-    throw error
+  } catch (err) {
+    throw err
   }
 }
 
@@ -86,8 +114,8 @@ const DeletePost = async (req, res) => {
       {where: {id: req.params.post_id} }
     )
     res.send({msg: 'Post deleted.', payload: req.params.post_id, status: 'OK'})
-  } catch (error) {
-    throw error
+  } catch (err) {
+    throw err
   }
 }
 
@@ -97,5 +125,6 @@ module.exports = {
   GetPostsByUserId, 
   CreatePost, 
   UpdatePost, 
-  DeletePost
+  DeletePost,
+  GetPostByType
 }
