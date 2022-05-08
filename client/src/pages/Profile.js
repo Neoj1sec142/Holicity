@@ -1,8 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import { GetUserByName, GetFollowersByUSer, GetFollowingByFollower, Follow, Unfollow} from '../services/UserServices'
-import { GetPostByUser } from '../services/PostServices'
-import Post from '../components/PostCard.jsx'
+import { GetPostByUser, RemovePost } from '../services/PostServices'
+import PostCard from '../components/PostCard.jsx'
+
 
 
 const Profile = (props) => {
@@ -16,6 +17,7 @@ const Profile = (props) => {
     const [following, setFollowing] = useState([])
     const [btn, setBtn] = useState(false)
 
+    //use effect to check if user on page is the owner or visitor
     useEffect(() => {
         if(profileUser){
             const getData = async () => {
@@ -26,16 +28,25 @@ const Profile = (props) => {
         }
     }, [profileUser, props.user])
 
+    //use effect to get the posts of the user who owns page
     useEffect(() => {
         const getProfilePosts = async () => {
-            if(profileUser.id){
-                const data = await GetPostByUser(profileUser.id)
+            if(user.id){
+                const data = await GetPostByUser(user.id)
                 setPosts(data)
             }
         }
         getProfilePosts()
-    }, [profileUser])
+    }, [user])
 
+    //function to delete post
+    const deletePost = (id) => {
+        if(window.confirm("Are you sure you want to remove this vibe?")){
+            RemovePost(id)
+            window.location.reload(false)
+        }
+    }
+    //function to handle the edit/follow btn
     const handleClick = async () => {
         if(followers.filter((fol) => fol.id === props.user.id).length === 0){
             await Follow(user.id, props.user.id)
@@ -68,7 +79,14 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <div className='profile-posts'>
-
+                    {posts.map((post, i) => (
+                        <div className='post-container' key={i}>
+                        <PostCard post={post}/>
+                        {props.user.username === profileUser &&
+                            <button onClick={() => deletePost(post.id)}>X</button> 
+                        }
+                        </div>
+                    ))}
                 </div>
             </div>
         )
