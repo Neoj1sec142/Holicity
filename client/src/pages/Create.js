@@ -13,7 +13,22 @@ const Create = (props) => {
         url: ''
     })
 
+    const allTypes = [
+        '----------------------------',
+        'Recipe',
+        'Recyclable Alternative',
+        'Wildlife',
+        'Natural Health',
+        'Fitness',
+        'Gas Alternatives',
+        'Green House Effect'
+    ]
+
     const handleChange = (e) => {
+        setPost({...post, [e.target.name]: e.target.value})
+    }
+    const handleSelect = (e) => {
+        console.log(e.target.value)
         setPost({...post, [e.target.name]: e.target.value})
     }
     const handleSubmit = async (e) => {
@@ -40,15 +55,15 @@ const Create = (props) => {
                 </div>
                 <div className='input-wrapper'>
                     <h4>~ What is your Vibe ~</h4>
-                    <input 
-                        onChange={handleChange}
-                        type='text'
-                        value={post.type}
-                        name='type'
-                        placeholder='~Type Goes Here~'
-                        maxLength='255'
-                        required
-                    />
+                    <div>
+                        <label htmlFor='type'></label>
+                        <select onChange={(e) => handleSelect(e)} value={post.type} name='type' id='type'>
+                            {allTypes.map((type, i) => (
+                                <option key={i} name='type'>{type}</option>
+                            ))}
+                            
+                        </select>
+                    </div>
                 </div>
                 <div className='input-wrapper'>
                     <h4>~ Share a Pic ~</h4>

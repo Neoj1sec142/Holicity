@@ -27,6 +27,15 @@ const Browse = () => {
         
     }, [])
 
+    const allTypes = [
+        'Recipe',
+        'Recyclable Alternative',
+        'Wildlife',
+        'Natural Health',
+        'Fitness',
+        'Gas Alternatives',
+        'Green House Effect'
+    ]
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -35,7 +44,7 @@ const Browse = () => {
         const res = posts.filter((item) => item.type.toLowerCase().includes(browsed.toLowerCase()))
         setBrowsed(res)
     }
-    
+    console.log(posts, "POSTS")
     if(posts){
         return(
             <div className='browse'>
@@ -56,8 +65,8 @@ const Browse = () => {
                     <div>
                         <h2>Check The Energy in the Room</h2>
                         <ul>
-                        {posts.map((post, i) => (
-                            <li key={i}>{post.type}</li>
+                        {allTypes.map((post, i) => (
+                            <li key={i}>{post}</li>
                         ))}
                         </ul> 
                     </div>
