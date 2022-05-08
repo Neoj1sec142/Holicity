@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { GetPosts } from '../services/PostServices'
+import { GetPosts, GetPostByType } from '../services/PostServices'
 
 
 const Browse = () => {
     const [query, setQuery] = useState('')
     const [browsed, setBrowsed] = useState([])
     const [posts, setPosts] = useState([])
+    const [selectedTy, setSelectedTy] = useState([])
     const [types, setTypes] = useState([])
 
     useEffect(() => {
@@ -14,16 +15,18 @@ const Browse = () => {
             setPosts(posts)
 
         }
-        // const getTypes = async () => {
-        //     const type = GetPos
-        // }
+        if(browsed){
+            const getTypes = async () => {
+                const type = GetPostByType(browsed)
+                setSelectedTy(type)
+                console.log(type, "TYPE")
+            }
+            getTypes()
+        }
         getPosts()
+        
     }, [])
-    let arr = []
-    posts.map((post) => {
-        arr.push(post.type)
-        return arr
-    })
+
 
     const handleChange = (e) => {
         setQuery(e.target.value)
@@ -32,11 +35,11 @@ const Browse = () => {
         const res = posts.filter((item) => item.type.toLowerCase().includes(browsed.toLowerCase()))
         setBrowsed(res)
     }
-    console.log(arr)
+    
     if(posts){
         return(
             <div className='browse'>
-                <form onSubmit={handleSubmit}>
+                <form >
                     <input 
                         className='browse-form'
                         onChange={(e) => handleChange(e)}
@@ -45,6 +48,7 @@ const Browse = () => {
                         name='posts'
                         placeholder="Browse the Energy.."
                     />
+                    <button onSubmit={handleSubmit}/>
                 </form>
                 {!browsed ? 
                     <div>Search Res</div>
@@ -52,8 +56,8 @@ const Browse = () => {
                     <div>
                         <h2>Check The Energy in the Room</h2>
                         <ul>
-                        {posts.map((post) => (
-                            <li>{post.type}</li>
+                        {posts.map((post, i) => (
+                            <li key={i}>{post.type}</li>
                         ))}
                         </ul> 
                     </div>

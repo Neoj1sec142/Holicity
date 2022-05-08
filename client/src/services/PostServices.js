@@ -23,6 +23,14 @@ export const GetPostByUser = async (id) => {
     } catch (err) {throw err}
 }
 
+export const GetPostByType = async (type) => {
+    try {
+        const res = await Client.get(`/posts/${type}`)
+        // console.log(res, "res")
+        return res.data
+    } catch (err) {throw err}
+}
+
 export const CreatePost = async (id, post) => {
     try{
         const data = {
