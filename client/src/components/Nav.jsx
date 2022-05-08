@@ -15,14 +15,17 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
             <div className='feet'></div>
           </label> */}
             <nav className='menu'>
-              <Link className='links' to="/feed">Feed</Link>
-              <Link className='links' to="/browse">Browse</Link>
-              <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
-              <Link className='links' to="/create">Create</Link>
-              <Link className='links' to="/search">Search</Link>
-              <Link className='links' onClick={handleLogOut} to="/">
+              <label htmlFor='nav'></label>
+              <select name='nav' id='nav'>
+              <option name='nav'> <Link className='links' to="/feed">Feed</Link></option>
+              <option name='nav'><Link className='links' to="/browse">Browse</Link></option>
+              <option name='nav'><Link className='links' to={`/profile/${user.username}`}>Profile</Link></option>
+              <option name='nav'><Link className='links' to="/create">Create</Link></option>
+              <option name='nav'><Link className='links' to="/search">Search</Link></option>
+              <option name='nav'><Link className='links' onClick={handleLogOut} to="/">
                 Sign Out
-              </Link>
+              </Link></option>
+              </select>
             </nav>
         </nav>
       </section>
