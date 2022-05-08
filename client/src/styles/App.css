@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --primary-bg: #1a171565;
@@ -34,7 +36,7 @@ input {
 }
 
 header, footer {
-  max-height: 4em;
+  max-height: 5em;
   display: flex;
   /* flex-direction: column; */
   border-bottom: 2px solid black;
@@ -50,7 +52,7 @@ nav {
   
 }
 
-/* nav a, nav h3 {
+nav a, nav h3 {
   text-decoration-color: var(--primary-bg);
   margin: auto 1em;
   color: var(--link-color-primary);
@@ -58,12 +60,13 @@ nav {
   border-radius: 6px;
   font-weight: 800;
   transition: all 0.2s ease;
+  border: 3px solid black;
 }
 
 nav a:hover {
   color: var(--link-color-secondary);
   text-decoration-color: var(--link-color-primary);
-} */
+}
 
 #footer-items{
   border-bottom: 2px solid black;
@@ -78,7 +81,6 @@ nav a:hover {
   max-height: 3em;
   flex-direction: row;
   /* bottom: 0; */
-  
 }
 
 html, .App, * {
@@ -113,6 +115,8 @@ html {
   background-image: url('../assets/greener_1.jpeg');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  height: 100%;
 }
 
 .details{
@@ -136,7 +140,7 @@ html {
 
 
 /* hanmburger menu css */
-.hamburger{
+/* .hamburger{
   height: 40px;
   margin: 10px;
   display: -ms-grid;
@@ -156,7 +160,7 @@ html {
   transition: all 0.2s ease-in-out;
 }
 
-#toggle:unchecked{
+#toggle{
   display:none;
 }
 
@@ -172,12 +176,12 @@ html {
   margin-top: -5px;
 }
 
-#toggle:checked + .hamburger .feet{
+#toggle:checked + .hamburger.feet{
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
-#toggle:checked ~ .menu {
+#toggle:checked ~ .menu{
   height: 350px;
 }
 
@@ -227,4 +231,4 @@ Link{
   color: rgb(61, 61, 61);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
+} */

@@ -7,13 +7,13 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       
       <section className='burger-menu'>
         <nav id='navbar' className='navbar' role='navigation'>
-          <input id='toggle' type='checkbox' htmlFor="toggle"/>
+          {/* <input id='toggle' type='checkbox' htmlFor="toggle"/> */}
           <h3>Logged in as {user.username}!</h3>
-          <label className='hamburger'>
+          {/* <label className='hamburger'>
             <div className='head'></div>
             <div className='body'></div>
             <div className='feet'></div>
-          </label>
+          </label> */}
             <nav className='menu'>
               <Link className='links' to="/feed">Feed</Link>
               <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
