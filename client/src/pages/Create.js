@@ -59,7 +59,7 @@ const Create = (props) => {
                         <label htmlFor='type'></label>
                         <select onChange={(e) => handleSelect(e)} value={post.type} name='type' id='type'>
                             {allTypes.map((type, i) => (
-                                <option key={i} name='type'>{type}</option>
+                                <option key={i} name='type' required>{type}</option>
                             ))}
                             
                         </select>
