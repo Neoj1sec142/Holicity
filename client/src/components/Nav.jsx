@@ -7,25 +7,16 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       
       <section className='burger-menu'>
         <nav id='navbar' className='navbar' role='navigation'>
-          {/* <input id='toggle' type='checkbox' htmlFor="toggle"/> */}
           <h3>Logged in as {user.username}!</h3>
-          {/* <label className='hamburger'>
-            <div className='head'></div>
-            <div className='body'></div>
-            <div className='feet'></div>
-          </label> */}
             <nav className='menu'>
-              <label htmlFor='nav'></label>
-              <select name='nav' id='nav'>
-              <option name='nav'> <Link className='links' to="/feed">Feed</Link></option>
-              <option name='nav'><Link className='links' to="/browse">Browse</Link></option>
-              <option name='nav'><Link className='links' to={`/profile/${user.username}`}>Profile</Link></option>
-              <option name='nav'><Link className='links' to="/create">Create</Link></option>
-              <option name='nav'><Link className='links' to="/search">Search</Link></option>
-              <option name='nav'><Link className='links' onClick={handleLogOut} to="/">
+               <Link className='links' to="/feed">Feed</Link>
+              <Link className='links' to="/browse">Browse</Link>
+              <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
+              <Link className='links' to="/create">Create</Link>
+              <Link className='links' to="/search">Search</Link>
+              <Link className='links' onClick={handleLogOut} to="/">
                 Sign Out
-              </Link></option>
-              </select>
+              </Link>
             </nav>
         </nav>
       </section>
