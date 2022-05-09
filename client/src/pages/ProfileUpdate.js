@@ -42,7 +42,7 @@ const ProfileUpdate = (props) => {
             }
             </div>
             <div className='input-wrapper'>
-            <label for='profileImg'>Profile picture (Url): </label>
+            <label htmlFor='profileImg'>Profile picture (Url): </label>
             <input 
               onChange={handleChange}
               type='url' 
@@ -52,7 +52,7 @@ const ProfileUpdate = (props) => {
           </div>
 
           <div className='input-wrapper'>
-            <label for='fullname'>Full name: </label>
+            <label htmlFor='fullname'>Full name: </label>
             <input 
               onChange={handleChange}
               type='text' 
@@ -63,16 +63,16 @@ const ProfileUpdate = (props) => {
             />
           </div>
           <div className='input-wrapper'>
-            <label for='email'>Email: </label>
+            <label htmlFor='email'>Email: </label>
             <input 
               onChange={handleChange}
               type='email' 
               value={userDetails.email} 
               name='email' 
-              maxlength='255'/>
+              maxLength='255'/>
           </div>
           <div className='input-wrapper'>
-            <label for='profileDescription'>About You: </label>
+            <label htmlFor='profileDescription'>About You: </label>
             <br />
             <textarea 
               onChange={handleChange}

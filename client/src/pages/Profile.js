@@ -10,7 +10,7 @@ const Profile = (props) => {
     const navigate = useNavigate()
     const params = useParams()
     const profileUser = params.username
-    console.log(profileUser)
+    // console.log(profileUser)
 
     const [user, setUser] = useState({})
     const [posts, setPosts] = useState([])

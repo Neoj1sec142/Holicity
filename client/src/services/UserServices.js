@@ -2,7 +2,7 @@ import Client from './api'
 
 export const GetUsers = async () => {
     try{
-        const res = await Client.get('')
+        const res = await Client.get('users/')
         return res.data
     }catch(err){throw err}
 }
