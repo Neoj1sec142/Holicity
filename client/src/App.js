@@ -79,7 +79,7 @@ function App() {
               element={<Details user={user} authenticated={authenticated} />}
             />
             {/* <Route path="/profile/:username/update"
-              element={<Settings user={user} authenticated={authenticated} />}
+              element={<ProfileUpdate user={user} authenticated={authenticated} />}
             /> */}
             <Route path="/create"
               element={<Create user={user} authenticated={authenticated} />}

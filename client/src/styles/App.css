@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* :root {
+:root {
   --primary-bg: #1a171565;
   --link-color-primary: #1d201f;
   --secondary-bg: #e1efe6;
   --link-color-secondary: #e1efe6;
   --primary-button-hover: #575d5ca4;
   --custom-gradient: linear-gradient(323deg, rgba(71, 73, 73, 0.75) 0%, rgba(255,255,255,.75) 100%);
-  --custom-background-image: url('../assets/'); 
+  /* --custom-background-image: url('../assets/');  */
 }
 
-button {
+/* button {
   
   border: 1px solid black;
   cursor: pointer;
@@ -29,9 +26,9 @@ button:hover {
 button,
 input {
   border-radius: 8px;
-}
+} */
 
-.logo-wrapper div{
+/* .logo-wrapper div{
   height: 1.5em;
 }
 
@@ -81,18 +78,19 @@ nav a:hover {
   max-height: 3em;
   flex-direction: row;
  
-}
+}*/
 
 html, .App, * {
   box-sizing: border-box;
+  width: 100%;
 }
 
 html {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
-.card-overlay {
+} 
+/* .card-overlay {
   position: relative;
   border: 7px solid var(--primary-button-hover); 
   width: 60%;
@@ -107,7 +105,7 @@ html {
   padding: 5px;
   justify-content: center;
   align-items: center;
-}
+} */
 .feed{
   text-align: center;
   border-right: 120px solid black;
@@ -132,11 +130,11 @@ html {
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
   background: var(--custom-gradient);
 }
-.home-container{
+/* .home-container{
   margin-block: 15%;
   display:flex;
   justify-content: center;
-} */
+}  */
 
 
 /* hanmburger menu css */

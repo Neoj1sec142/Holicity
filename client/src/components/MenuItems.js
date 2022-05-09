@@ -1,22 +1,23 @@
 import Dropdown from "./Dropdown.jsx";
 import { useState } from "react";
 
-const MenuItems = ({ items }) => {
+const MenuItems = (props) => {
     const [dropdown, setDropdown] = useState(false);
+    console.log("MENU", props)
  return (
   <li className="menu-items">
-   {items.submenu ? (
+   {props.items.submenu ? (
     <>
      <button
       aria-expanded={dropdown ? "true" : "false"}
       onClick={() => setDropdown((prev) => !prev)}
      >
-      {items.title}{" "}
+      {props.items.title}{" "}
      </button>
-     <Dropdown submenus={items.submenu} dropdown={dropdown} />
+     <Dropdown submenus={props.items.submenu} dropdown={dropdown} props={props}/>
     </>
    ) : (
-    <a href="/#">{items.title}</a>
+    <a href="/#">{props.items.title}</a>
    )}
   </li>
  );

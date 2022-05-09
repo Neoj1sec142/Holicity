@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { menuItems } from "../menu/menuItem";
-import MenuItems from '../menu/MenuItems'
+import { menuItems } from "./menuItem";
+import MenuItems from './MenuItems'
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
@@ -55,6 +55,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
           <img
+            style={{maxWidth: '40px'}}
             className="logo"
             src="https://avatars.dicebear.com/api/jdenticon/app.svg"
             alt="welcome banner"

@@ -17,10 +17,10 @@ export const menuItems = [
        ]
     },
     {
-     title: "Blog",
+     title: "Profile",
      submenu: [
         {
-         title: "blog"
+         title: "profile"
         },
         {
          title: "blog_post",

@@ -57,6 +57,10 @@ const Profile = (props) => {
         }
     }
 
+    const navUp = () => {
+        navigate('update')
+    }
+    // console.log(user.id, "HEYY")
     if(props.authenticated && user.id){
         return(
             <div className='profile'>
@@ -72,7 +76,7 @@ const Profile = (props) => {
                         <h4>Name: {user.fullName}</h4>
                         <h4>Email: {user.email}</h4>
                         {props.user.username === profileUser ?
-                            <button>Edit Profile</button>
+                            <button onClick={() => navUp()}>Edit Profile</button>
                             : <button onClick={(e) => handleClick(e)}>
                                     { btn ? 'Unfollow' : 'Follow'}
                                 </button>}
