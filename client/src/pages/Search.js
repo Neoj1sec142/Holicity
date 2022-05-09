@@ -67,7 +67,7 @@ const Search = (props) => {
                             :   <div className='profile-img-container'></div>
                         }
                         <div className='profile-info-container'>
-                        <h2><Link to={`/profile/${user.username}`}>{user.username}</Link></h2>
+                        <h2><Link to={`/profile/${user.id}`}>{user.username}</Link></h2>
                                     <div>
                                         <span> Followers: {user.followers.length} </span> 
                                         <span> Following: {user.following.length} </span>

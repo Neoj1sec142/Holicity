@@ -17,19 +17,21 @@ const Feed = (props) => {
             setFeed(data)
         }
         GetData()
-      }, [id])
-    
+      }, [])
+    console.log(feed, "FEED")
     if(feed.length){
     return (
         <div className='feed'>
             {feed.sort((a,b) => {return (a.updatedAt < b.updatedAt) ? 1 : -1} ).map((post, i) => (
                 <div key={i} className='post-container'>
-                    <div className='username' onClick={() => navigate(`/profile/${feed.User.username}`)} >
-                    {/* {feed.User.profileImg ?
-                    <div className='profile-img-container username-stripe-img' style={{backgroundImage:`url(${feed.User.profileImg})`}}></div> 
-                    :
-                    <div className='profile-img-container username-stripe-img'></div>
-                    } */}
+                    <div className='username' onClick={() => navigate(`/profile/${post.userId}`)} >
+                    {post.User.profileImg 
+                        ?   <img src={`${post.User.profileImg}`} alt='profile-img' style={{maxWidth: '150px'}}/>
+                        :   <img src='../assets/no_img.jpeg' alt='no-profile-img'/>
+                    // <div className='profile-img-container username-stripe-img' style={{backgroundImage:`url(${feed.User.profileImg})`}}></div> 
+                    // :
+                    // <div className='profile-img-container username-stripe-img'></div>
+                    }
                     {post.User.username}
                     </div>
                     
