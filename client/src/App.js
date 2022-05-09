@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 import Details from './pages/Details'
 //import Settings from './components/Settings.jsx'
 import './styles/App.css';
+import './styles/menu.css'
 import Browse from './pages/Browse';
 
 
@@ -41,12 +42,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <header>
+        <div className="nav-area">
         <Nav
           authenticated={authenticated}
           user={user}
           handleLogOut={handleLogOut}
         />
+        </div>
+      </header>
+      <div className="App-header">
+        
       </div>
       <div className='app_main'>
       <Routes>

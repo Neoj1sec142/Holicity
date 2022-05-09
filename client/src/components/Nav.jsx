@@ -1,4 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { menuItems } from "../menu/menuItem";
+import MenuItems from '../menu/MenuItems'
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
@@ -9,14 +11,16 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <nav id='navbar' className='navbar' role='navigation'>
           <h3>Logged in as {user.username}!</h3>
             <nav className='menu'>
-               <Link className='links' to="/feed">Feed</Link>
-              <Link className='links' to="/browse">Browse</Link>
-              <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
-              <Link className='links' to="/create">Create</Link>
-              <Link className='links' to="/search">Search</Link>
-              <Link className='links' onClick={handleLogOut} to="/">
-                Sign Out
-              </Link>
+              <ul className="menus">
+                {/* <Link className='links' to="/feed">Feed</Link>
+                <Link className='links' to="/browse">Browse</Link>
+                <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
+                <Link className='links' to="/create">Create</Link>
+                <Link className='links' to="/search">Search</Link> */}
+                <Link className='links' onClick={handleLogOut} to="/">
+                  Sign Out
+                </Link>
+              </ul>
             </nav>
         </nav>
       </section>
@@ -35,6 +39,19 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   const navigate = useNavigate()
   return (
     <header>
+      <nav>
+      {authenticated && user ?
+        <ul className="menus">
+          {menuItems.map((menu, index) => {
+          return (
+            <MenuItems items={menu} key={index} />
+            );
+          })}
+        </ul>
+        :
+        <div></div>
+        }
+      </nav>
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
           <img
