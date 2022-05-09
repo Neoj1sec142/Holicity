@@ -7,7 +7,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   if (user) {
     authenticatedOptions = (
       
-      <section className='burger-menu'>
+      <section className='navbar navbar-expand-xl navbar-dark bg-dark fixed-bottom'>
         <nav id='navbar' className='d-flex flex-row justify-content-around' role='navigation'>
           <h3>Logged in as {user.username}!</h3>
             <nav className='menu'>
@@ -19,6 +19,16 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
                 <Link className='links' to="/search">Search</Link> */}
                 <Link className='links' onClick={handleLogOut} to="/">
                   Sign Out
+                </Link>
+                <Link to="/">
+                  <div className="d-flex flex-end" alt="logo">
+                    <img
+                      style={{maxWidth: '40px'}}
+                      className="position-right"
+                      src="https://avatars.dicebear.com/api/jdenticon/app.svg"
+                      alt="welcome banner"
+                    />
+                  </div>
                 </Link>
               </ul>
             </nav>
@@ -41,7 +51,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     <header>
       <nav>
       {authenticated && user ?
-        <ul className="menus justify-content-around">
+        <ul className="menus justify-content-around fixed-top">
           {menuItems.map((menu, index) => {
           return (
             <MenuItems items={menu} key={index} />
@@ -52,16 +62,6 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <div></div>
       }
       </nav>
-      <Link to="/">
-        <div className="logo-wrapper" alt="logo">
-          <img
-            style={{maxWidth: '40px'}}
-            className="logo"
-            src="https://avatars.dicebear.com/api/jdenticon/app.svg"
-            alt="welcome banner"
-          />
-        </div>
-      </Link>
       <div className="top" onClick={() => {
           (authenticated && user ? navigate('/feed') : navigate('/signin'))}}> 
         </div>

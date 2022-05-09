@@ -8,12 +8,15 @@ const MenuItems = (props) => {
   <li className="menu-items">
    {props.items.submenu ? (
     <>
+    <div className='tab-content' id='pills-tabContent'>
      <button
-      aria-expanded={dropdown ? "true" : "false"}
-      onClick={() => setDropdown((prev) => !prev)}
+        className="tab-pane fade active show " id="pills-home"
+        aria-expanded={dropdown ? "true" : "false"}
+        onClick={() => setDropdown((prev) => !prev)}
      >
       {props.items.title}{" "}
      </button>
+     </div>
      <Dropdown submenus={props.items.submenu} dropdown={dropdown} props={props}/>
     </>
    ) : (
