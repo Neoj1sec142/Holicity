@@ -31,6 +31,18 @@ const Details = () => {
         setComment({...comment, rating: e})
     }
 
+    const handleSubmit = (e) => {
+        const user_id = det.id
+        e.preventDefault()
+        if (toggleComm){
+            // props.uploadComment(user_id, post_id, props.postDetailState.newComment)
+            window.top.location.reload(true)
+            setToggleComm(false)
+        }else{
+            setToggleComm(true)
+        }
+    }
+
     // console.log(det, "DETAILS")
     if(det.id){
         return(
@@ -76,6 +88,9 @@ const Details = () => {
                         />
                     </div>
                 }
+                <button onClick={(e)=> handleSubmit(e)}>
+                {toggleComm ? 'Send' : 'Add a Comment'}
+                </button>
             </div>
         )
     }else{
