@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
-import { GetUserDetail, UpdateUserProfile } from '../services/UserServices'
+import { GetUserDetail, UpdateProfile } from '../services/UserServices'
 
 
 
@@ -26,8 +26,8 @@ const ProfileUpdate = (props) => {
 
   const handleSubmit = async (e) => {
       e.preventDefault()
-      await UpdateUserProfile(props.user.id, userDetails) 
-      navigate(`/profile/${props.user.username}`)
+      await UpdateProfile(props.user.id, userDetails) 
+      navigate(`/profile/${props.user.id}`)
   }
 
     if (userDetails.id) {
@@ -48,7 +48,7 @@ const ProfileUpdate = (props) => {
               type='url' 
               value={userDetails.profileImg} 
               name='profileImg' 
-              maxlength='255'/>            
+              maxLength='255'/>            
           </div>
 
           <div className='input-wrapper'>
@@ -58,7 +58,7 @@ const ProfileUpdate = (props) => {
               type='text' 
               value={userDetails.fullname} 
               name='fullname' 
-              maxlength='255'
+              maxLength='255'
               required 
             />
           </div>

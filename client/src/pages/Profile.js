@@ -84,8 +84,8 @@ const Profile = (props) => {
             <div className='profile'>
                 <div className='profile-board'>
                     {user.profileImg 
-                        ?   <div></div>
-                        :   <div></div>
+                        ?   <img src={`${user.profileImg}`} alt='profile-img' style={{maxWidth: '150px'}}/>
+                        :   <img src='../assets/no_img.jpeg' alt='no-profile-img'/>
                     }
                     <div className='profile-info'>
                         <h2>{user.username}</h2>

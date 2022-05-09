@@ -9,6 +9,7 @@ import Feed from './pages/Feed'
 import Create from './pages/Create'
 import Search from './pages/Search'
 import Profile from './pages/Profile'
+import ProfileUpdate from './pages/ProfileUpdate'
 import Footer from './components/Footer'
 import Details from './pages/Details'
 import './styles/App.css';
@@ -78,9 +79,9 @@ function App(props) {
             <Route path="/details/:post_id"
               element={<Details user={user} authenticated={authenticated} />}
             />
-            {/* <Route path="/profile/:username/update"
+            <Route path="/profile/:id/update"
               element={<ProfileUpdate user={user} authenticated={authenticated} />}
-            /> */}
+            />
             <Route path="/create"
               element={<Create user={user} authenticated={authenticated} />}
             />
