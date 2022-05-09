@@ -3,11 +3,12 @@ import { GetPosts, GetPostByType } from '../services/PostServices'
 
 
 const Browse = () => {
-    const [query, setQuery] = useState('')
-    const [browsed, setBrowsed] = useState([])
+    
+    const [browsed, setBrowsed] = useState('')
     const [posts, setPosts] = useState([])
-    const [selectedTy, setSelectedTy] = useState([])
-    const [types, setTypes] = useState([])
+    const [post, setPost] = useState({})
+    const [grabType, setGrabType] = useState([])
+    
 
     useEffect(() => {
         const getPosts = async () => {
@@ -15,19 +16,20 @@ const Browse = () => {
             setPosts(posts)
 
         }
-        if(browsed){
-            const getTypes = async () => {
-                const type = GetPostByType(browsed)
-                setSelectedTy(type)
-                console.log(type, "TYPE")
-            }
-            getTypes()
+        
+        const getTypes = async () => {
+            const type = GetPostByType(browsed)
+            setGrabType(type)
+            
         }
+        getTypes()
+        
         getPosts()
         
     }, [])
-
+    console.log(grabType, "TYPE")
     const allTypes = [
+        '---------------------------',
         'Recipe',
         'Recyclable Alternative',
         'Wildlife',
@@ -37,19 +39,18 @@ const Browse = () => {
         'Green House Effect'
     ]
 
-    const handleChange = (e) => {
-        setQuery(e.target.value)
+    const handleSelect = (e) => {
+        console.log(e.target.value, "SELECTION")
+        setBrowsed(e.target.value)
     }
-    const handleSubmit = async (e) => {
-        const res = posts.filter((item) => item.type.toLowerCase().includes(browsed.toLowerCase()))
-        setBrowsed(res)
-    }
-    console.log(posts, "POSTS")
+
+   
+    
     if(posts){
         return(
             <div className='browse'>
                 <form >
-                    <input 
+                    {/* <input 
                         className='browse-form'
                         onChange={(e) => handleChange(e)}
                         value={query}
@@ -57,19 +58,22 @@ const Browse = () => {
                         name='posts'
                         placeholder="Browse the Energy.."
                     />
-                    <button onSubmit={handleSubmit}/>
+                    <button onSubmit={handleSubmit}/> */}
+                    <div>
+                        <h2>Check The Energy in the Room</h2>
+                        <label htmlFor='type'></label>
+                        <select onChange={(e) => handleSelect(e)} value={post.type} name='type' id='type'>
+                            {allTypes.map((type, i) => (
+                                <option key={i} name='type' required>{type}</option>
+                            ))}
+                            
+                        </select>
+                    </div>
                 </form>
                 {!browsed ? 
                     <div>Search Res</div>
                     :
-                    <div>
-                        <h2>Check The Energy in the Room</h2>
-                        <ul>
-                        {allTypes.map((post, i) => (
-                            <li key={i}>{post}</li>
-                        ))}
-                        </ul> 
-                    </div>
+                    <div></div>
                 }
 
 
