@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { menuItems } from "./menuItem";
 import MenuItems from './MenuItems'
 
-const Nav = ({ authenticated, user, handleLogOut }) => {
+const Nav = ({ authenticated, user, handleLogOut, props }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
@@ -54,7 +54,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <ul className="menus justify-content-around fixed-top">
           {menuItems.map((menu, index) => {
           return (
-            <MenuItems items={menu} key={index} />
+            <MenuItems items={menu} key={index} user={user}/>
             );
           })}
         </ul>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { GetPosts, GetPostByType } from '../services/PostServices'
 
 
-const Browse = () => {
+const Browse = (props) => {
     
     const [browsed, setBrowsed] = useState('')
     const [posts, setPosts] = useState([])

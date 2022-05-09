@@ -2,22 +2,23 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { GetPosts } from '../services/PostServices'
 import PostCard from '../components/PostCard.jsx'
-import {Alert, Button, Breadcrumb, Card} from 'react-bootstrap'
+// import {Alert, Button, Breadcrumb, Card} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-const Feed = () => {
+const Feed = (props) => {
     const { id } = useParams()
     const navigate = useNavigate();
     const [feed, setFeed] = useState({})
     useEffect(() => {
         const GetData = async () =>{
             const data = await GetPosts()
+            // console.log(data)
             setFeed(data)
         }
         GetData()
       }, [id])
-    // console.log(feed, "FEED")
+    
     if(feed.length){
     return (
         <div className='feed'>

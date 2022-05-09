@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
-import { GetUserByName, GetFollowersByUSer, GetFollowingByFollower, Follow, Unfollow} from '../services/UserServices'
+import { GetUserDetail, GetFollowerByUser, GetFollowingByFollower, Follow, Unfollow} from '../services/UserServices'
 import { GetPostByUser, RemovePost } from '../services/PostServices'
 import PostCard from '../components/PostCard.jsx'
 
@@ -10,6 +10,7 @@ const Profile = (props) => {
     const navigate = useNavigate()
     const params = useParams()
     const profileUser = params.username
+    console.log(profileUser)
 
     const [user, setUser] = useState({})
     const [posts, setPosts] = useState([])
@@ -21,12 +22,29 @@ const Profile = (props) => {
     useEffect(() => {
         if(profileUser){
             const getData = async () => {
-                const data = await GetUserByName(profileUser)
+                const data = await GetUserDetail(profileUser)
                 setUser(data)
             }
             getData()
         }
     }, [profileUser, props.user])
+
+    useEffect(() => {
+        const getFollowers = async () => {
+            if (profileUser) {
+                const followMe = await GetFollowerByUser(profileUser)
+                setFollowers(followMe[0].followers)
+            }
+        }
+        const getFollowing = async () => {
+            if (profileUser) {
+                const amFollowing = await GetFollowingByFollower(profileUser)
+                setFollowing(amFollowing[0].following)
+            }
+        }
+        getFollowers()
+        getFollowing()
+    },[profileUser, btn])
 
     //use effect to get the posts of the user who owns page
     useEffect(() => {
@@ -60,24 +78,22 @@ const Profile = (props) => {
     const navUp = () => {
         navigate('update')
     }
-    // console.log(user.id, "HEYY")
+    // console.log(profileUser, "HEYY")
     if(props.authenticated && user.id){
         return(
             <div className='profile'>
                 <div className='profile-board'>
-                    {user.profileImg ? 
-                        <div></div>
-                        :
-                        <div></div>
-                    
+                    {user.profileImg 
+                        ?   <div></div>
+                        :   <div></div>
                     }
                     <div className='profile-info'>
                         <h2>{user.username}</h2>
                         <h4>Name: {user.fullName}</h4>
                         <h4>Email: {user.email}</h4>
-                        {props.user.username === profileUser ?
-                            <button onClick={() => navUp()}>Edit Profile</button>
-                            : <button onClick={(e) => handleClick(e)}>
+                        {props.user.id === parseInt(profileUser) 
+                            ?   <button onClick={() => navUp()}>Edit Profile</button>
+                            :   <button onClick={(e) => handleClick(e)}>
                                     { btn ? 'Unfollow' : 'Follow'}
                                 </button>}
                     </div>
@@ -86,7 +102,7 @@ const Profile = (props) => {
                     {posts.map((post, i) => (
                         <div className='post-container' key={i}>
                         <PostCard post={post}/>
-                        {props.user.username === profileUser &&
+                        {props.user.username === user.username &&
                             <button onClick={() => deletePost(post.id)}>X</button> 
                         }
                         </div>

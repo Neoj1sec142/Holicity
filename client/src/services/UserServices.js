@@ -16,14 +16,14 @@ export const GetUserDetail = async (id) => {
 
 export const Follow = async (id, follower_id) => {
     try{
-        const res = await Client.post(`userfollowers/follow/${id}/follower/${follower_id}`)
+        const res = await Client.post(`followers/follow/${id}/follower/${follower_id}`)
         return res.data
     } catch (err) {throw err}
 }
 
 export const Unfollow = async (id, follower_id) => {
     try{
-        const follower = await Client.delete(`userfollowers/unfollow/${id}/follower/${follower_id}`)
+        const follower = await Client.delete(`followers/unfollow/${id}/follower/${follower_id}`)
         return follower.data
     } catch (err) {throw err}
 }
@@ -44,14 +44,14 @@ export const UpdateProfile = async (id, userDetails) => {
 
 export const GetFollowerByUser = async (id) => {
     try {
-        const res = await Client.get(`userfollowers/followers/${id}`)
+        const res = await Client.get(`followers/followers/${id}`)
         return res.data
       } catch (err) {throw err}
 }
 
 export const GetFollowingByFollower = async (id) => {
     try {
-        const res = await Client.get(`userfollowers/following/${id}`)
+        const res = await Client.get(`followers/following/${id}`)
         return res.data
       } catch (error) {throw error}
 }

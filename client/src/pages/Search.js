@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { GetUsers } from '../services/UserServices'
 
-const Search = () => {
+const Search = (props) => {
     const [users, setUsers] = useState([])
     const [query, setQuery] = useState('')
     const [search, setSearch] = useState('')

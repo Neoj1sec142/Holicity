@@ -1,12 +1,12 @@
 import Dropdown from "./Dropdown.jsx";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const MenuItems = (props) => {
+const MenuItems = ({items, user}) => {
     const [dropdown, setDropdown] = useState(false);
-    console.log("MENU", props)
+   
  return (
   <li className="menu-items">
-   {props.items.submenu ? (
+   {items.submenu ? (
     <>
     <div className='tab-content' id='pills-tabContent'>
      <button
@@ -14,13 +14,13 @@ const MenuItems = (props) => {
         aria-expanded={dropdown ? "true" : "false"}
         onClick={() => setDropdown((prev) => !prev)}
      >
-      {props.items.title}{" "}
+      {items.title}{" "}
      </button>
      </div>
-     <Dropdown submenus={props.items.submenu} dropdown={dropdown} props={props}/>
+     <Dropdown submenus={items.submenu} dropdown={dropdown} user={user}/>
     </>
    ) : (
-    <a href="/#">{props.items.title}</a>
+    <a href="/#">{items.title}</a>
    )}
   </li>
  );

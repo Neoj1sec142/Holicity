@@ -18,7 +18,7 @@ import Browse from './pages/Browse';
 
 
 
-function App() {
+function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -56,7 +56,7 @@ function App() {
         
       </div>
       <div className='app_main'>
-        <body className='d-flex flex-column min-vh-100'>
+        <div className='d-flex flex-column min-vh-100'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
@@ -91,7 +91,7 @@ function App() {
               element={<Browse user={user} authenticated={authenticated} />}
             />
           </Routes>
-        </body>
+        </div>
       </div>
       <footer className='mt-auto'>
         <Footer />
