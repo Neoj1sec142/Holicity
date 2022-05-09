@@ -8,7 +8,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     authenticatedOptions = (
       
       <section className='burger-menu'>
-        <nav id='navbar' className='navbar' role='navigation'>
+        <nav id='navbar' className='d-flex flex-row justify-content-around' role='navigation'>
           <h3>Logged in as {user.username}!</h3>
             <nav className='menu'>
               <ul className="menus">
@@ -41,7 +41,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     <header>
       <nav>
       {authenticated && user ?
-        <ul className="menus">
+        <ul className="menus justify-content-around">
           {menuItems.map((menu, index) => {
           return (
             <MenuItems items={menu} key={index} />
@@ -50,7 +50,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         </ul>
         :
         <div></div>
-        }
+      }
       </nav>
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
@@ -61,9 +61,8 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
           />
         </div>
       </Link>
-      <div className="Holicity-header" onClick={() => {
-          (authenticated && user ? navigate('/feed') : navigate('/signin'))}}>
-          <h1>Holicity</h1> 
+      <div className="top" onClick={() => {
+          (authenticated && user ? navigate('/feed') : navigate('/signin'))}}> 
         </div>
       {authenticated && user ? authenticatedOptions : publicOptions}
     </header>

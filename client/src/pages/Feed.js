@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { GetPosts } from '../services/PostServices'
 import PostCard from '../components/PostCard.jsx'
+import {Alert, Button, Breadcrumb, Card} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 const Feed = () => {
@@ -29,6 +31,7 @@ const Feed = () => {
                     } */}
                     {post.User.username}
                     </div>
+                    
                     <PostCard post={post} />
                 </div>
             ))}

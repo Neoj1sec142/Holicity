@@ -4,14 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --primary-bg: #1a171565;
   --link-color-primary: #1d201f;
   --secondary-bg: #e1efe6;
   --link-color-secondary: #e1efe6;
   --primary-button-hover: #575d5ca4;
   --custom-gradient: linear-gradient(323deg, rgba(71, 73, 73, 0.75) 0%, rgba(255,255,255,.75) 100%);
-  /* --custom-background-image: url('../assets/'); */
+  --custom-background-image: url('../assets/'); 
 }
 
 button {
@@ -38,7 +38,7 @@ input {
 header, footer {
   max-height: 5em;
   display: flex;
-  /* flex-direction: column; */
+  
   border-bottom: 2px solid black;
   border-top: 5px solid black;
   
@@ -80,7 +80,7 @@ nav a:hover {
 .footer img{
   max-height: 3em;
   flex-direction: row;
-  /* bottom: 0; */
+ 
 }
 
 html, .App, * {
@@ -136,7 +136,7 @@ html {
   margin-block: 15%;
   display:flex;
   justify-content: center;
-}
+} */
 
 
 /* hanmburger menu css */

@@ -11,10 +11,11 @@ import Search from './pages/Search'
 import Profile from './pages/Profile'
 import Footer from './components/Footer'
 import Details from './pages/Details'
-//import Settings from './components/Settings.jsx'
 import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
 import Browse from './pages/Browse';
+
 
 
 function App() {
@@ -55,45 +56,46 @@ function App() {
         
       </div>
       <div className='app_main'>
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/signin"
-            element={
-              <SignIn
-                setUser={setUser}
-                toggleAuthenticated={toggleAuthenticated}
-              />
-            }
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/feed"
-            element={<Feed user={user} authenticated={authenticated} />}
-          />
-          <Route path="/profile/:username"
-            element={<Profile user={user} authenticated={authenticated} />}
-          />
-          <Route path="/details/:post_id"
-            element={<Details user={user} authenticated={authenticated} />}
-          />
-          {/* <Route path="/profile/:username/update"
-            element={<Settings user={user} authenticated={authenticated} />}
-          /> */}
-          <Route path="/create"
-            element={<Create user={user} authenticated={authenticated} />}
-          />
-          <Route path="/search"
-            element={<Search user={user} authenticated={authenticated} />}
-          />
-          <Route path="/browse"
-            element={<Browse user={user} authenticated={authenticated} />}
-          />
-        </Routes>
-        
+        <body className='d-flex flex-column min-vh-100'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/signin"
+              element={
+                <SignIn
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                />
+              }
+            />
+            <Route path="/register" element={<Register />} />
+            <Route path="/feed"
+              element={<Feed user={user} authenticated={authenticated} />}
+            />
+            <Route path="/profile/:username"
+              element={<Profile user={user} authenticated={authenticated} />}
+            />
+            <Route path="/details/:post_id"
+              element={<Details user={user} authenticated={authenticated} />}
+            />
+            {/* <Route path="/profile/:username/update"
+              element={<Settings user={user} authenticated={authenticated} />}
+            /> */}
+            <Route path="/create"
+              element={<Create user={user} authenticated={authenticated} />}
+            />
+            <Route path="/search"
+              element={<Search user={user} authenticated={authenticated} />}
+            />
+            <Route path="/browse"
+              element={<Browse user={user} authenticated={authenticated} />}
+            />
+          </Routes>
+        </body>
       </div>
-      <div className='footer'>
+      <footer className='mt-auto'>
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 }

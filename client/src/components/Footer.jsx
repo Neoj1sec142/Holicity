@@ -1,19 +1,26 @@
+// import {Card} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const Footer = () => {
     return (
-        <div className='footer'>
-          <footer id='footer-items'>
+        <div className='card-footer'>
+          <div className='card-body align-bottom' >
             <img 
+              style={{maxWidth: '40px'}}
               onClick={() => window.open('https://github.com/Neoj1sec142/','_blank')}
               src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+              class="img-thumbnail" 
               alt='github icon' 
             />
             <img 
+              style={{maxWidth: '40px'}}
               onClick={() => window.open('https://linkedin.com/in/markharmon142/','_blank')}
-              src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" 
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png"
+              class="img-thumbnail"  
               alt='linkedin icon' 
             />
             <p>Mark H.</p>
-          </footer>
+          </div>
         </div>
     )
 }
