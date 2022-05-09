@@ -14,18 +14,15 @@ const Browse = () => {
         const getPosts = async () => {
             const posts = await GetPosts()
             setPosts(posts)
-
         }
-        
-        const getTypes = async () => {
-            const type = GetPostByType(browsed)
-            setGrabType(type)
-            
+        if(browsed !== '---------------------------'){
+            const getTypes = async () => {
+                const type = GetPostByType(browsed)
+                setGrabType(type)
+            }
+            getTypes()
         }
-        getTypes()
-        
         getPosts()
-        
     }, [])
     console.log(grabType, "TYPE")
     const allTypes = [
