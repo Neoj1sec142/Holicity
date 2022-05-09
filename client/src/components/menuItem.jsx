@@ -6,7 +6,7 @@ export const menuItems = [
          title: "feed"
         },
         {
-         title: "profile",
+         title: "blog",
         },
         {
          title: "search"
@@ -23,7 +23,7 @@ export const menuItems = [
          title: "profile"
         },
         {
-         title: "blog_post",
+         title: "search",
         }
        ]
     },

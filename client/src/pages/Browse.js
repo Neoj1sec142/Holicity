@@ -57,9 +57,10 @@ const Browse = (props) => {
                     />
                     <button onSubmit={handleSubmit}/> */}
                     <div>
-                        <h2>Check The Energy in the Room</h2>
+                        
                         <label htmlFor='type'></label>
                         <select onChange={(e) => handleSelect(e)} value={post.type} name='type' id='type'>
+                        <h2>Check The Energy in the Room</h2>
                             {allTypes.map((type, i) => (
                                 <option key={i} name='type' required>{type}</option>
                             ))}

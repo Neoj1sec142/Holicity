@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { GetPostDetail } from '../services/PostServices'
 import ReactStars from 'react-stars'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Details = () => {
     const [det, setDet] = useState({})
@@ -46,7 +47,7 @@ const Details = () => {
     // console.log(det, "DETAILS")
     if(det.id){
         return(
-            <div className='details'>
+            <div className='details' style={{flexDirection: 'column'}}>
                 <h3>
                     {det.title ? 
                         <span className='post-title'>
@@ -75,7 +76,7 @@ const Details = () => {
                             size={24}
                             count={5}
                             color2={'#ffd700'}
-                            className={'stars'}
+                            className={'d-flex justify-content-center'}
                             half={false}
                             name='rating'
                             value={comment.rating}

@@ -16,6 +16,7 @@ import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
 import Browse from './pages/Browse';
+import Blog from './pages/Blog';
 
 
 
@@ -75,6 +76,9 @@ function App(props) {
             />
             <Route path="/profile/:username"
               element={<Profile user={user} authenticated={authenticated} />}
+            />
+            <Route path="/blog"
+              element={<Blog user={user} authenticated={authenticated} />}
             />
             <Route path="/details/:post_id"
               element={<Details user={user} authenticated={authenticated} />}
