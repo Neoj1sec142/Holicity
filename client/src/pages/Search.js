@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { AllUsersWFollowers } from '../services/UserServices'
+import {Card} from 'react-bootstrap'
 
 const Search = (props) => {
     const [users, setUsers] = useState([])
@@ -29,23 +30,25 @@ const Search = (props) => {
             <div className='search'>
                 <form onSubmit={handleSubmit}>
                     <input 
-                        className='search-form'
+                        className='position-absolute top-20 start-50 translate-middle'
                         onChange={(e) => handleChange(e)}
                         value={query}
                         maxLength='255'
                         name='username'
                         placeholder='Search Friends..'
+                        style={{maxWidth: '60%', marginTop: '3em'}}
                     />
                 </form>
-                <div className="">
+                <div>
                     {search.map((res, i) => (
-                        <div key={i}>
-                            <h2>Search Results</h2>
-                            <div className='profile-info'>
+                        <div key={i} style={{flexDirection: 'column', marginTop: '8em'}} className='d-flex justify-content-center'>
+                            <h2 className='d-flex justify-content-center' style={{marginBottom: '50px'}}>Search Results</h2>
+                            <Card style={{maxWidth: '60%', padding: '10px', maxHeight: '90px'}} className='d-flex justify-content-center start-50 translate-middle'>
+                            <div className='d-flex justify-content-center' >
                                 {res.profileImg ?
-                                    <div className='profile-img-container' style={{backgroundImage: `url(${res.profileImg})`}}></div>
+                                    <img className='profile-img-container' src={`${res.profileImg}`} style={{maxWidth: '80px'}} alt='text'></img>
                                     :
-                                    <div className='profile-img-container'></div>
+                                    <img className='profile-img-container' src='../assets/no_img.jpeg' style={{maxWidth: '80px'}} alt='text'></img>
                                 }
                                 <div className='profile-info-container'>
                                     <h2><Link to={`/profile/${res.id}`}>{res.username}</Link></h2>
@@ -55,16 +58,18 @@ const Search = (props) => {
                                     </div>
                                 </div>
                             </div>
+                            </Card>
                         </div>
                     ))}
                     {!search.length ?  
-                    <div>
-                        <h2> All Users</h2> 
+                    <div style={{marginTop: '5em', flexDirection: 'column'}} className='d-flex justify-content-center '>
+                        <h2 className='d-flex justify-content-center'> All Users</h2> 
+                        <Card style={{maxWidth: '60%', padding: '10px', maxHeight: '90px'}} className='d-flex justify-content-center start-50 translate-middle'>
                         {users.map((user, i) => (
-                        <div className='profile-info' key={i}>
+                        <div className='d-flex justify-content-center align-items-center' key={i}>
                             {user.profileImg 
-                            ?   <div className='profile-img-container' style={{backgroundImage:`url(${user.profileImg})`}}></div> 
-                            :   <div className='profile-img-container'></div>
+                            ?   <img className='img-thumbnail'  src={`${user.profileImg}`} style={{maxWidth: '80px'}} alt='text'></img> 
+                            :   <img className='img-thumbnail' src='../assets/no_img.jpeg' alt='text'></img>
                         }
                         <div className='profile-info-container'>
                         <h2><Link to={`/profile/${user.id}`}>{user.username}</Link></h2>
@@ -74,8 +79,11 @@ const Search = (props) => {
                                     </div>
                         </div>
                         </div>
+                        
                     ))}
+                    </Card>
                     </div>
+                    
                 : <div></div> 
             }
                 </div>
