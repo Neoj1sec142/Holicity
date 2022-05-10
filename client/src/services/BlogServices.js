@@ -2,7 +2,7 @@ import Client from './api'
 
 export const GetBlogs = async () => {
     try{
-        const res = await Client.get('/blogs')
+        const res = await Client.get('/blogs/')
         console.log(res, "SERVICES")
         return res.data
     }catch(err){throw err}
@@ -32,16 +32,17 @@ export const GetBlogByType = async (type) => {
     } catch (err) {throw err}
 }
 
-export const CreateBlog = async (id, blog) => {
+export const CreateBlog = async (user_id, blog) => {
     try{
+        console.log(blog, "HERE")
         const data = {
             type: blog.type,
             thoughts: blog.thoughts,
             url: blog.url,
-            userId: id
+            userId: user_id
         }
-        await Client.post(`/blogs/create/${id}`, data, {mode: "CORS"})
-        .then((res) => console.log(res, "Bloged Successfully"))
+        await Client.post(`/blogs/create/${user_id}/`, data)
+        .then((res) => console.log(res, "Blogged Successfully"))
         .catch((err) => console.log(err, "621"))
     }catch(err){throw err}
 }

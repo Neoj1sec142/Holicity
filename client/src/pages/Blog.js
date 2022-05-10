@@ -6,22 +6,20 @@ import {Card, Button} from 'react-bootstrap'
 const Blog = (props) => {
 
     // const navigate = useNavigate()
-    const [topic, setTopic] = useState('')
+    
     const [blogPost, setBlogPost] = useState([])
     const [blog, setBlog] = useState({
         type: '',
         thoughts: '',
         url: ''
     })
-    console.log(topic)
+    // console.log(topic)
     useEffect(() => {
-        if(topic.length){
-            const getData = async () => {
-                const data = await GetBlogs()
-                setBlogPost(data)
-            }
-            getData()
-        }  
+        const getData = async () => {
+            const data = await GetBlogs()
+            setBlogPost(data)
+        }
+        getData()
     }, [])
 
     const allTypes = [
@@ -36,21 +34,24 @@ const Blog = (props) => {
     ]
 
     const handleType = (e) => {
-        setBlog({...blog, [e.target.name]: e.target.value})
-        setTopic(e.target.value)
+        setBlog({...blog, type: e.target.value})
+        
     }
     const handleChange = (e) => {
-        setBlog({...blog, [e.target.name]: e.target.value})
+        setBlog({...blog,[e.target.name]: e.target.value})
         
-        // console.log(topic, "TOPIC")
+        
     }
+   
     const handleSubmit = async (e) => {
+        const user_id = props.user.id
         e.preventDefault()
-        await CreateBlog(props.user.id, blog)
+        await CreateBlog(user_id, blog)
         // navigate('/blog')
     }
-    
 
+    // window.top.location.reload(false)
+    console.log(blogPost, "BLOGGGGGG")
     return(
         <div className='blog'>
             <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
@@ -61,7 +62,7 @@ const Blog = (props) => {
                         <select onChange={(e) => handleType(e)} value={blog.type} name='type' id='type'>
                             
                             {allTypes.map((type, i) => (
-                                <option key={i} name='type' value={topic} onChange={handleChange} required>{type}</option>
+                                <option key={i} name='type'  onChange={handleChange} required>{type}</option>
                             ))}
                         </select>
                     </div>
@@ -84,7 +85,7 @@ const Blog = (props) => {
                             name='url'
                             placeholder='~Links Here~'
                             maxLength='255'
-                            required
+                            
                         />
                     </div>
                     <button onSubmit={handleSubmit} />

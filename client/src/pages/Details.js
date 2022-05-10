@@ -23,6 +23,7 @@ const Details = () => {
         const getData = async () => {
             const data = await GetPostDetail(post_id)
             setDet(data)
+            setPostComments(data.Comments)
         }
         getData()
     }, [post_id])
@@ -40,7 +41,7 @@ const Details = () => {
         const user_id = det.id
         e.preventDefault()
         if (toggleComm){
-            console.log("HEY")
+            // console.log("HEY")
             CreateComment(user_id, post_id, comment)
             window.top.location.reload(true)
             setToggleComm(false)
@@ -49,7 +50,7 @@ const Details = () => {
         }
     }
 
-    console.log(det, "DETAILS")
+    console.log(postComments, "DETAILS")
     if(det.id){
         return(
             <div className='details' style={{flexDirection: 'column'}}>
@@ -99,7 +100,7 @@ const Details = () => {
                 </button>
                 <div className='comments-all-container'>
                 {postComments.map((comm) => (
-                    <Comment commentor={comm.User.username} rating={comm.rating} comment={comm.comment} key={comm.id} /> 
+                    <Comment commentor={comm.User.username} rating={comm.rating} comment={comm.description} key={comm.id} /> 
                     
                 ))} 
             </div>

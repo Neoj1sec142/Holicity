@@ -1,12 +1,15 @@
 import ReactStars from 'react-stars'
+import {Card} from 'react-bootstrap'
 
 const Comment = ({rating, comment, commentor}) => {
 
     return (
         <div className='comment-wrapper'>
-            <h5>Comment By: {commentor}</h5>
-            <p>{comment}</p>
-            <ReactStars value={rating} edit={false} size={24} color2={'#ffd700'} />
+            <Card className='d-flex align-items-center' style={{padding: '10px', flexDirection: 'row'}}>
+                <h5>Comment By: {commentor}</h5>
+                <Card.Text className='d-flex justify-content-center' style={{paddingTop: '8px'}}>{comment}</Card.Text>
+                <ReactStars className='d-flex justify-content-center' value={rating} edit={false} size={24} style={{flexDirection: 'row'}} color2={'#ffd700'} />
+            </Card>
         </div>
     )
 }

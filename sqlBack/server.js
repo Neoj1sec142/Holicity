@@ -24,6 +24,7 @@ app.use('/users', UserRouter)
 app.use('/followers', FollowerRouter)
 app.use('/posts', PostRouter)
 app.use('/comments', CommentRouter)
+
 app.use('/blogs', BlogRouter)
 app.use('/blogcomms', BlogCommRouter)
 
