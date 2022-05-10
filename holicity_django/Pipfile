@@ -7,8 +7,11 @@ name = "pypi"
 django = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.9"
+python-dotenv = "*"
