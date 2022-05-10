@@ -2,13 +2,13 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./helpers/formatDate')
+const formatMessage = require('./helper/formatDate')
 const {
   getActiveUser,
   exitRoom,
   newUser,
   getIndividualRoomUsers
-} = require('./helpers/userHelper');
+} = require('./helper/userHelper');
 
 const app = express();
 const server = http.createServer(app);
@@ -68,6 +68,6 @@ io.on('connection', socket => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

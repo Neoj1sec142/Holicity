@@ -96,6 +96,10 @@ const Profile = (props) => {
                             :   <button onClick={(e) => handleClick(e)}>
                                     { btn ? 'Unfollow' : 'Follow'}
                                 </button>}
+                        {props.user.id === parseInt(profileUser) 
+                        ?   <a href='http://localhost:3003' target='_blank' rel="noreferrer">Messenger</a>
+                        :   <div></div>
+                        }
                     </div>
                 </div>
                 <div className='profile-posts'>

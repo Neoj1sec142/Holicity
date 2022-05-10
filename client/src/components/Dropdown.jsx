@@ -20,9 +20,11 @@ const Dropdown = ({submenus, dropdown, user}) => {
           <li key={index} className="menu-items">
             {submenu.title === 'profile' ?
               <a href={`/${submenu.title}/${user.id}`}>{submenu.title}</a>
+              
               :
               <a href={`/${submenu.title}/`}>{submenu.title}</a>
             }
+            
           </li>
         ))}
      </ul>
