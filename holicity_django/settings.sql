@@ -1,4 +1,4 @@
 -- settings.sql
-CREATE DATABASE holicity;
-CREATE USER holicityuser WITH PASSWORD 'h1o5l0i3city';
-GRANT ALL PRIVILEGES ON DATABASE holicity TO holicityuser;
+CREATE DATABASE holicity_test2;
+CREATE USER user2 WITH PASSWORD 'new123';
+GRANT ALL PRIVILEGES ON DATABASE holicity_test TO user1;
