@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate, Link } from 'react-router-dom'
+import {Card} from 'react-bootstrap'
 
 const SignIn = (props) => {
 
@@ -25,10 +26,10 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="home-container col">
-      <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
+    <div className="" style={{maxWidth: '70%'}}>
+      <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
+        <form className="col" onSubmit={handleSubmit} >
+          <div className="d-flex justify-content-center">
             <label htmlFor="username">Username:</label>
             <input
               onChange={handleChange}
@@ -40,7 +41,7 @@ const SignIn = (props) => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
@@ -55,9 +56,9 @@ const SignIn = (props) => {
           <button disabled={!user.username || !user.password}>
             Sign In
           </button>
-          <h5>Dont Have an Account? <Link to={'/register'}>Click Here to Register</Link></h5>
+          <Card.Text>Dont Have an Account? <Link to={'/register'}>Click Here to Register</Link></Card.Text>
         </form>
-      </div>
+      </Card>
     </div>
   )
 }

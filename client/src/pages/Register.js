@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
-
+import {Card} from 'react-bootstrap'
 
 
 const Register = () => {
@@ -37,10 +37,10 @@ const Register = () => {
   }
 
   return (
-    <div className="home-container col">
-      <div className="card-overlay centered">
+    <div className="" style={{maxWidth: '70%'}}>
+      <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
         <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="fullname">Full Name</label>
             <input
               onChange={handleChange}
@@ -52,7 +52,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
@@ -64,7 +64,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
@@ -77,7 +77,7 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
@@ -89,7 +89,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="d-flex justify-content-center">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
@@ -111,7 +111,7 @@ const Register = () => {
             Sign In
           </button>
         </form>
-      </div>
+      </Card>
     </div>
   )
 }

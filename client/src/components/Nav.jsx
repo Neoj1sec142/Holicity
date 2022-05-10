@@ -39,7 +39,7 @@ const Nav = ({ authenticated, user, handleLogOut, props }) => {
   }
 
   const publicOptions = (
-    <nav>
+    <nav className='d-flex justify-content-around'>
       <Link to="/">Home</Link>
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>

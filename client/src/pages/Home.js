@@ -1,19 +1,22 @@
 import { useNavigate } from 'react-router-dom'
-
+import {Card} from 'react-bootstrap'
 const Home = () => {
   
   let navigate = useNavigate()
 
   return (
-    <div className="home-container col">
-      <div className="welcome-card col card-overlay">
-        <h2 id='login-description'>~ Greener Earth Starts Here ~</h2>
-          <section className="welcome-signin">
-          <button onClick={() => navigate('/signin')}>
+    <div className="d-flex justify-content-center">
+      <Card className="" style={{maxWidth: '70%' }}>
+        <Card.Title className='d-flex justify-content-center'>~ Greener Earth Starts Here ~</Card.Title>
+        <Card.Body>
+          <section className="d-flex justify-content-center">
+          <button onClick={() => navigate('/signin')} style={{maxWidth: '100px'}}
+          className='btn btn-outline-primary'>
             ~ Enter ~ 
           </button>
         </section>
-      </div>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
