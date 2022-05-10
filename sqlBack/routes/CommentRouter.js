@@ -9,7 +9,7 @@ router.get('/user/:user_id', controller.GetCommentsByUserId)
 
 router.get('/post/:post_id', controller.GetCommentsByPostId)
 
-router.post('/create/post-:post_id/user-:commenter_id', 
+router.post('/create/post-:post_id/user-:user_id', 
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateComment)

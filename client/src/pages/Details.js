@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { GetPostDetail } from '../services/PostServices'
+import { GetPostDetail, CreateComment } from '../services/PostServices'
 import ReactStars from 'react-stars'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Comment from '../components/Comment'
 
 const Details = () => {
     const [det, setDet] = useState({})
     const [toggleComm, setToggleComm] = useState(false)
+    const [postComments, setPostComments] = useState([])
     const [comment, setComment] = useState({
         title: '',
         description: '',
@@ -25,6 +27,8 @@ const Details = () => {
         getData()
     }, [post_id])
 
+   
+
     const handleChange = async (e) => {
         setComment({...comment, [e.target.name]: e.target.value})
     }
@@ -36,7 +40,8 @@ const Details = () => {
         const user_id = det.id
         e.preventDefault()
         if (toggleComm){
-            // props.uploadComment(user_id, post_id, props.postDetailState.newComment)
+            console.log("HEY")
+            CreateComment(user_id, post_id, comment)
             window.top.location.reload(true)
             setToggleComm(false)
         }else{
@@ -44,7 +49,7 @@ const Details = () => {
         }
     }
 
-    // console.log(det, "DETAILS")
+    console.log(det, "DETAILS")
     if(det.id){
         return(
             <div className='details' style={{flexDirection: 'column'}}>
@@ -92,6 +97,12 @@ const Details = () => {
                 <button onClick={(e)=> handleSubmit(e)}>
                 {toggleComm ? 'Send' : 'Add a Comment'}
                 </button>
+                <div className='comments-all-container'>
+                {postComments.map((comm) => (
+                    <Comment commentor={comm.User.username} rating={comm.rating} comment={comm.comment} key={comm.id} /> 
+                    
+                ))} 
+            </div>
             </div>
         )
     }else{

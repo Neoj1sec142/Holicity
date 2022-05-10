@@ -37,7 +37,7 @@ const GetCommentsByPostId = async (req, res) => {
 const CreateComment = async (req, res) => {
   try {
     const newComment = await Comment.create(
-      { ...req.body,  postId: req.params.post_id, userId: req.params.commenter_id}
+      { ...req.body,  postId: req.params.post_id, userId: req.params.user_id}
     )
       res.send(newComment)
   } catch (error) {

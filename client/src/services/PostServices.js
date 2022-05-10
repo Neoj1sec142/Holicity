@@ -56,3 +56,18 @@ export const RemovePost = async (id) => {
         throw err
     }
 }
+
+export const CreateComment = async (post_id, user_id, comment) => {
+    try{
+        const data = {
+            title: comment.title,
+            description: comment.description,
+            rating: comment.rating,
+            userId: user_id,
+            postId: post_id
+        }
+        await Client.post(`/comments/create/post-${post_id}/user-${user_id}`, data, {mode: "CORS"})
+        .then((res) => console.log(res, "Commented Successfully"))
+        .catch((err) => console.log(err, "892"))
+    }catch(err){throw err}
+}

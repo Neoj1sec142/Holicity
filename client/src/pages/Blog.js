@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import {useNavigate} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
 import { CreateBlog, GetBlogs } from '../services/BlogServices'
+import {Card, Button} from 'react-bootstrap'
 
 const Blog = (props) => {
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [topic, setTopic] = useState('')
     const [blogPost, setBlogPost] = useState([])
     const [blog, setBlog] = useState({
@@ -52,9 +53,9 @@ const Blog = (props) => {
 
     return(
         <div className='blog'>
-            <div className='create-blog'>
+            <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
                 <form className='card-overlay centered' >
-                    <div className='create-blog type'>
+                    <div className='d-flex justify-content-center' style={{paddingBottom: '15px'}}>
                         <h2>Topic:</h2>
                         <label htmlFor='type'></label>
                         <select onChange={(e) => handleType(e)} value={blog.type} name='type' id='type'>
@@ -64,7 +65,7 @@ const Blog = (props) => {
                             ))}
                         </select>
                     </div>
-                    <div className='create-blog input'>
+                    <div className='' style={{paddingBottom: '15px'}}>
                     <h4>~ Share your Thoughts ~</h4>
                         <input 
                             onChange={handleChange}
@@ -88,7 +89,7 @@ const Blog = (props) => {
                     </div>
                     <button onSubmit={handleSubmit} />
                 </form>
-            </div>
+            </Card>
             <div className='blog-card'></div>
         </div>
     )

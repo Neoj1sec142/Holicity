@@ -15,12 +15,15 @@ const Create = (props) => {
 
     const allTypes = [
         '----------------------------',
+        'Just Spreading Love',
+        'Picture',
+        'Poetry',
         'Recipe',
         'Recyclable Alternative',
-        'Wildlife',
-        'Natural Health',
-        'Fitness',
-        'Gas Alternatives',
+        'Wildlife Preservation/Restoration',
+        'Natural Health/Herbal Remedies',
+        'Fitness/Meditation',
+        'Fuel Alternatives',
         'Green House Effect'
     ]
 
