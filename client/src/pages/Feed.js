@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { GetPosts } from '../services/PostServices'
 import PostCard from '../components/PostCard.jsx'
-import { Card} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -23,9 +23,10 @@ const Feed = (props) => {
     return (
         <div className='feed'>
             <Card>
+                <Card.Title className='text-decoration-underline'>Check Recent Vibes</Card.Title>
             {feed.sort((a,b) => {return (a.updatedAt < b.updatedAt) ? 1 : -1} ).map((post, i) => (
                 <Card.Body key={i} className='post-container'>
-                    <div className='username' onClick={() => navigate(`/profile/${post.userId}`)} >
+                    <div className='border border-5 border-primary' onClick={() => navigate(`/profile/${post.userId}`)} >
                     {post.User.profileImg 
                         ?   <img src={`${post.User.profileImg}`} className="d-flex justify-content-start"
                         alt='profile-img' style={{maxWidth: '50px'}}/>

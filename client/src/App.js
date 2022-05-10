@@ -17,6 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
 import Browse from './pages/Browse';
 import Blog from './pages/Blog';
+import Messenger from './pages/Messenger'
 
 
 
@@ -94,6 +95,9 @@ function App(props) {
             />
             <Route path="/browse"
               element={<Browse user={user} authenticated={authenticated} />}
+            />
+            <Route path="/messenger"
+              element={<Messenger user={user} authenticated={authenticated} />}
             />
           </Routes>
         </div>

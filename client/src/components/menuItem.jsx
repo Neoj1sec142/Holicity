@@ -27,6 +27,9 @@ export const menuItems = [
         },
         {
          title: "search",
+        },
+        {
+         title: "messenger",
         }
        ]
     },
