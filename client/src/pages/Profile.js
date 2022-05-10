@@ -106,7 +106,7 @@ const Profile = (props) => {
                     {posts.map((post, i) => (
                         <div className='post-container' key={i}>
                         <PostCard post={post}/>
-                        {props.user.username === user.username &&
+                        {props.user.id === parseInt(profileUser) &&
                             <button onClick={() => deletePost(post.id)}>X</button> 
                         }
                         </div>
