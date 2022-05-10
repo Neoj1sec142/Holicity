@@ -13,6 +13,9 @@ export const menuItems = [
         },
         {
          title: 'browse'
+        },
+        {
+         title: 'create'
         }
        ]
     },

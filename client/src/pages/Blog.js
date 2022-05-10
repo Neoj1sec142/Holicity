@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
-import { CreateBlog } from '../services/BlogServices'
+import { CreateBlog, GetBlogs } from '../services/BlogServices'
 
 const Blog = (props) => {
 
     const navigate = useNavigate()
     const [topic, setTopic] = useState('')
+    const [blogPost, setBlogPost] = useState([])
     const [blog, setBlog] = useState({
         type: '',
         thoughts: '',
         url: ''
     })
+    console.log(topic)
     useEffect(() => {
-        if(topic){
+        if(topic.length){
             const getData = async () => {
-                // const data = await GetBlogByTopic(topic)
+                const data = await GetBlogs()
+                setBlogPost(data)
             }
             getData()
-        }
-    }, [topic])
+        }  
+    }, [])
 
     const allTypes = [
-        '----------------------------',
+        '',
         'Recipe',
         'Recyclable Alternative',
         'Wildlife',
@@ -33,29 +36,31 @@ const Blog = (props) => {
 
     const handleType = (e) => {
         setBlog({...blog, [e.target.name]: e.target.value})
+        setTopic(e.target.value)
     }
     const handleChange = (e) => {
-        setTopic(e.target.value)
         setBlog({...blog, [e.target.name]: e.target.value})
+        
+        // console.log(topic, "TOPIC")
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
         await CreateBlog(props.user.id, blog)
-        navigate('/blog')
+        // navigate('/blog')
     }
     
 
     return(
         <div className='blog'>
             <div className='create-blog'>
-                <form className='card-overlay centered' onSubmit={handleSubmit}>
+                <form className='card-overlay centered' >
                     <div className='create-blog type'>
                         <h2>Topic:</h2>
                         <label htmlFor='type'></label>
                         <select onChange={(e) => handleType(e)} value={blog.type} name='type' id='type'>
                             
                             {allTypes.map((type, i) => (
-                                <option key={i} name='type' onChange={handleChange} required>{type}</option>
+                                <option key={i} name='type' value={topic} onChange={handleChange} required>{type}</option>
                             ))}
                         </select>
                     </div>
@@ -81,6 +86,7 @@ const Blog = (props) => {
                             required
                         />
                     </div>
+                    <button onSubmit={handleSubmit} />
                 </form>
             </div>
             <div className='blog-card'></div>

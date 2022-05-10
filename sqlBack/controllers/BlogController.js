@@ -27,6 +27,7 @@ const CreateBlog = async (req, res) => {
         { ...req.body,  userId: req.params.user_id}
       )
         res.send(data)
+        console.log(data, "DATA")
     } catch (err) {throw err}
 }
 
@@ -49,16 +50,16 @@ const GetBlogByType = async (req,res) => {
             model: User,
             attributes: ['id', 'username']
           },
-          {
-            model: BlogComm, 
-            attributes: ['id', 'type', 'thoughts', 'rating', 'userId'],
-            include: [
-              {
-                model: User,
-                attributes: ['id', 'username']
-              }
-            ]
-          }
+          // {
+          //   model: BlogComm, 
+          //   attributes: ['id', 'type', 'thoughts', 'rating', 'userId'],
+          //   include: [
+          //     {
+          //       model: User,
+          //       attributes: ['id', 'username']
+          //     }
+          //   ]
+          // }
         ]
       })
       res.send(data)

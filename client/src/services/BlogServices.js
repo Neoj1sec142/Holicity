@@ -2,7 +2,8 @@ import Client from './api'
 
 export const GetBlogs = async () => {
     try{
-        const res = await Client.get('/blogs/')
+        const res = await Client.get('/blogs')
+        console.log(res, "SERVICES")
         return res.data
     }catch(err){throw err}
 }
@@ -26,7 +27,7 @@ export const GetBlogByUser = async (id) => {
 export const GetBlogByType = async (type) => {
     try {
         const res = await Client.get(`/blogs/${type}`)
-        // console.log(res, "res")
+        console.log(res, "res")
         return res.data
     } catch (err) {throw err}
 }
