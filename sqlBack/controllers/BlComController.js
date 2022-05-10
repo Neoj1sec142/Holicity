@@ -30,7 +30,7 @@ const GetBlogComByBlogId = async (req, res) => {
 const CreateBlogCom = async (req, res) => {
     try {
       const data = await Comment.create(
-        { ...req.body,  blogId: req.params.blog_id, userId: req.params.blogcommenter_id}
+        { ...req.body,  blogId: req.params.blog_id, userId: req.params.user_id}
       )
         res.send(data)
     } catch (err) {throw err}
