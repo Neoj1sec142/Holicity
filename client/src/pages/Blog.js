@@ -111,7 +111,7 @@ const Blog = (props) => {
                 </form >
             </Card>
             <div className='blog-card' style={{marginTop: '23em'}}>
-                <h1>YO</h1>
+                
                 {blogItems.map((menu, index) => (
                     <BlogMenu  items={menu} key={index} handleBlog={handleBlog} />
                 ))}
