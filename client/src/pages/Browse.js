@@ -71,10 +71,11 @@ const Browse = (props) => {
                         </select>
                     </div>
                 </form>
-                {browsed ? 
+                {browsed && grabType.length > 1 ? 
                     <div>
                         {grabType.map((post, i) => (
                             <Card key={i}>
+                                <h1>Search Results</h1>
                                 <Card.Title>{post.title}</Card.Title>
                                 <Card.Text>{post.description}</Card.Text>
                             </Card>
