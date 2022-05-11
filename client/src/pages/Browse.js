@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetPosts, GetPostByType } from '../services/PostServices'
+import {Card} from 'react-bootstrap'
 
 
 const Browse = (props) => {
@@ -40,7 +41,9 @@ const Browse = (props) => {
         console.log(e.target.value, "SELECTION")
         setBrowsed(e.target.value)
     }
-
+    // useEffect(() => {
+        
+    // },[])
    
     
     if(posts){
@@ -68,8 +71,15 @@ const Browse = (props) => {
                         </select>
                     </div>
                 </form>
-                {!browsed ? 
-                    <div>Search Res</div>
+                {browsed ? 
+                    <div>
+                        {grabType.map((post, i) => (
+                            <Card key={i}>
+                                <Card.Title>{post.title}</Card.Title>
+                                <Card.Text>{post.description}</Card.Text>
+                            </Card>
+                        ))}
+                    </div>
                     :
                     <div></div>
                 }
