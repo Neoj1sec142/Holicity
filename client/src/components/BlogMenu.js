@@ -5,7 +5,7 @@ const BlogMenu = ({items, user, handleBlog}) => {
     const [dropdown, setDropdown] = useState(false);
    
  return (
-  <li className="menu-items">
+  <li  className='d-flex justify-content-center'>
    {items.submenu ? (
     <>
     <div className='tab-content' id='pills-tabContent'>

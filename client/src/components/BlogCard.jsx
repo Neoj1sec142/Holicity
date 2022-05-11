@@ -1,16 +1,13 @@
 import { Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'
 
 const BlogCard = ({blog}) => {
-const navigate = useNavigate();
 
     return (
-        <div className='post-card-container' key={blog.id} onClick={() => navigate(`/details/${blog.id}`)}>
-            <Card>
-                <h3>{blog.type}</h3>
-                {/* <div className='post-card-img' style={{backgroundImage:`url(${post.image})`}}></div> */}
-                <Card.Text>{blog.thoughts}</Card.Text>
-                <Card.Text>{blog.url}</Card.Text>
+        <div className='d-flex justify-content-center' key={blog.id}>
+            <Card style={{maxWidth: '60%'}}>
+                <Card.Title  className='d-flex justify-content-center'>{blog.type}</Card.Title>
+                <Card.Text style={{textAlign: 'center'}}>{blog.thoughts}</Card.Text>
+                <a href={`${blog.url}`} style={{textAlign: 'center'}}>{blog.url}</a>
             </Card>
         </div>
     )

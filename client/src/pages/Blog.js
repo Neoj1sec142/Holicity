@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
 import { CreateBlog, GetBlogs, GetBlogByType } from '../services/BlogServices'
 import {Card} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -9,9 +8,7 @@ import BlogCard from '../components/BlogCard'
 
 
 const Blog = (props) => {
-
-    const user_id = useParams()
-    // console.log(props.user.id, "PROPS")
+    
     const [blogPost, setBlogPost] = useState([])
     const [selection, setSelection] = useState("")
     const [showBlog, setShowBlog] = useState([])
@@ -20,7 +17,7 @@ const Blog = (props) => {
         thoughts: '',
         url: ''
     })
-    // console.log(topic)
+   
     useEffect(() => {
         const getData = async () => {
             const data = await GetBlogs()
@@ -69,11 +66,9 @@ const Blog = (props) => {
 
     const handleBlog = (e) => {        
         setSelection(e.target.name)
-        // console.log(selection, "SELLLL")
     }
 
-    // window.top.location.reload(false)
-    console.log(blog, "BLOGGGGGG")
+    
     return(
         <div className='blog'>
             <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
@@ -113,17 +108,17 @@ const Blog = (props) => {
                     <button  />
                 </form >
             </Card>
-            <div className='blog-card' style={{marginTop: '23em'}}>
+            <div className='blog-card' style={{marginTop: '30em'}}>
                 {blogItems.map((menu, index) => (
                     <BlogMenu  items={menu} key={index} handleBlog={handleBlog} />
                 ))}
-                <div>
+                <div style={{marginTop: '2em'}}>
                     {showBlog.length ?
                     showBlog.map((blog, i) => (
                     <BlogCard key={i} blog={blog}/>))
-                    :   <div></div>
+                    :   blogPost.map((blog, i) => (
+                        <BlogCard key={i} blog={blog} />))
                     }
-                    
                 </div>  
                 
             </div>
