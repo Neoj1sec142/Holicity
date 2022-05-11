@@ -34,14 +34,14 @@ export const GetBlogByType = async (type) => {
 
 export const CreateBlog = async (user_id, blog) => {
     try{
-        console.log(blog, "HERE")
+        // console.log(blog, "HERE")
         const data = {
             type: blog.type,
             thoughts: blog.thoughts,
             url: blog.url,
             userId: user_id
         }
-        await Client.post(`/blogs/create/${user_id}/`, data)
+        await Client.post(`/blogs/create/${user_id}/`, data, {mode: "CORS"})
         .then((res) => console.log(res, "Blogged Successfully"))
         .catch((err) => console.log(err, "621"))
     }catch(err){throw err}
