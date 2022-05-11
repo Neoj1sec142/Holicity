@@ -17,7 +17,7 @@ const BlogMenu = ({items, user, handleBlog}) => {
       {items.title}{" "}
      </button>
      </div>
-     <BlogDrop submenus={items.submenu} dropdown={dropdown} user={user} handleBlog={handleBlog}/>
+     <BlogDrop submenus={items.submenu} dropdown={dropdown} user={user} handleBlog={handleBlog} setDropdown={setDropdown} />
     </>
    ) : (
     <a href="/#">{items.title}</a>

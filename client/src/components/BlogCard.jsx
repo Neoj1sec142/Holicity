@@ -7,9 +7,10 @@ const navigate = useNavigate();
     return (
         <div className='post-card-container' key={blog.id} onClick={() => navigate(`/details/${blog.id}`)}>
             <Card>
-                <h3>{blog.title}</h3>
+                <h3>{blog.type}</h3>
                 {/* <div className='post-card-img' style={{backgroundImage:`url(${post.image})`}}></div> */}
-                <Card.Text>{blog.description}</Card.Text>
+                <Card.Text>{blog.thoughts}</Card.Text>
+                <Card.Text>{blog.url}</Card.Text>
             </Card>
         </div>
     )

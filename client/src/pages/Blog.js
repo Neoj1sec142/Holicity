@@ -5,6 +5,7 @@ import {Card} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BlogMenu from '../components/BlogMenu'
 import {blogItems} from '../components/blogItems'
+import BlogCard from '../components/BlogCard'
 
 
 const Blog = (props) => {
@@ -29,12 +30,14 @@ const Blog = (props) => {
     }, [])
 
     useEffect(() => {
-        const getType = async() => {
-            const res = await GetBlogByType(selection)
-            setShowBlog(res) 
-            console.log(res, "RESOLUTION")
+        if(selection !== ''){
+            const getType = async() => {
+                const res = await GetBlogByType(selection)
+                setShowBlog(res) 
+                setSelection('')
+            }
+            getType(selection)
         }
-        getType(selection)
     }, [selection])
 
     const allTypes = [
@@ -111,14 +114,17 @@ const Blog = (props) => {
                 </form >
             </Card>
             <div className='blog-card' style={{marginTop: '23em'}}>
-                
                 {blogItems.map((menu, index) => (
                     <BlogMenu  items={menu} key={index} handleBlog={handleBlog} />
                 ))}
-                    {/* <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Blogs</button>
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a className='dropdown-item'>Link</a></li>
-                    </ul> */}
+                <div>
+                    {showBlog.length ?
+                    showBlog.map((blog, i) => (
+                    <BlogCard key={i} blog={blog}/>))
+                    :   <div></div>
+                    }
+                    
+                </div>  
                 
             </div>
         </div>
