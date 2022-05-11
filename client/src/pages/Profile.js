@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { GetUserDetail, GetFollowerByUser, GetFollowingByFollower, Follow, Unfollow} from '../services/UserServices'
 import { GetPostByUser, RemovePost } from '../services/PostServices'
 import PostCard from '../components/PostCard.jsx'
+import {Card} from 'react-bootstrap'
 
 
 
@@ -82,27 +83,30 @@ const Profile = (props) => {
     if(props.authenticated && user.id){
         return(
             <div className='profile'>
-                <div className='profile-board'>
+                <Card className='d-flex flex-row justify-content-center' >
+                <div className='d-flex align-items-center' style={{maxWidth: '60%'}}>
                     {user.profileImg 
-                        ?   <img src={`${user.profileImg}`} alt='profile-img' style={{maxWidth: '150px'}}/>
+                        ?   <img src={`${user.profileImg}`} alt='profile-img' style={{maxWidth: '90px'}}/>
                         :   <img src='../assets/no_img.jpeg' alt='no-profile-img'/>
                     }
-                    <div className='profile-info'>
-                        <h2>{user.username}</h2>
-                        <h4>Name: {user.fullName}</h4>
-                        <h4>Email: {user.email}</h4>
+                    <div className='d-flex justify-content-center'>
+                        <Card.Title>{user.username}</Card.Title>
+                        <Card.Text>Name: {user.fullName}</Card.Text>
+                        <Card.Text>Email: {user.email}</Card.Text>
                         {props.user.id === parseInt(profileUser) 
                             ?   <button onClick={() => navUp()}>Edit Profile</button>
                             :   <button onClick={(e) => handleClick(e)}>
                                     { btn ? 'Unfollow' : 'Follow'}
                                 </button>}
-                        {props.user.id === parseInt(profileUser) 
+                        {/* {props.user.id === parseInt(profileUser) 
                         ?   <a href='http://localhost:3003' target='_blank' rel="noreferrer">Messenger</a>
                         :   <div></div>
-                        }
+                        } */}
                     </div>
                 </div>
-                <div className='profile-posts'>
+                </Card>
+                <Card className='d-flex flex-row justify-content-center'>
+                <div className='d-flex align-items-center' style={{maxWidth: '60%'}}>
                     {posts.map((post, i) => (
                         <div className='post-container' key={i}>
                         <PostCard post={post}/>
@@ -112,6 +116,7 @@ const Profile = (props) => {
                         </div>
                     ))}
                 </div>
+                </Card>
             </div>
         )
     } else {
