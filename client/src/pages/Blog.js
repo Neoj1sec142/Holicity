@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import BlogMenu from '../components/BlogMenu'
 import {blogItems} from '../components/blogItems'
 import BlogCard from '../components/BlogCard'
-
+import { allTypes } from '../components/allTypes'
 
 const Blog = (props) => {
     
@@ -37,16 +37,7 @@ const Blog = (props) => {
         }
     }, [selection])
 
-    const allTypes = [
-        '',
-        'Recipe',
-        'Recyclable Alternative',
-        'Wildlife',
-        'Natural Health',
-        'Fitness',
-        'Gas Alternatives',
-        'Green House Effect'
-    ]
+    
 
     const handleType = (e) => {
         setBlog({...blog, [e.target.name]: e.target.value})

@@ -58,9 +58,7 @@ function App(props) {
         />
         </div>
       </header>
-      <div className="App-header">
-        
-      </div>
+      
       <div className='app_main'>
         <div className='d-flex flex-column min-vh-100'>
           <Routes>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetPosts, GetPostByType } from '../services/PostServices'
+import { allTypes } from '../components/allTypes'
 
 import {Card} from 'react-bootstrap'
 
@@ -27,17 +28,7 @@ const Browse = () => {
         getPosts()
     }, [])
     // console.log(grabType, "TYPE")
-    const allTypes = [
-        '---------------------------',
-        'News',
-        'Recipe',
-        'Recyclable Alternative',
-        'Wildlife',
-        'Natural Health',
-        'Fitness',
-        'Gas Alternatives',
-        'Green House Effect'
-    ]
+    
 
     const handleSelect = (e) => {
         // console.log(e.target.value, "SELECTION")
@@ -60,24 +51,27 @@ const Browse = () => {
                         </select>
                     </div>
                 </form>
-                {browsed ? 
-                    <div>
-                        {grabType.map((post, i) => (
-                            <Card key={i}>
-                                <h1>Search Results</h1>
-                                <Card.Title>{post.title}</Card.Title>
-                                <Card.Text>{post.description}</Card.Text>
-                            </Card>
-                        ))}
-                    </div>
-                    :
-                    <div style={{maxWidth: '60%'}}>
-                        
-                    </div>
-                }
-               
-
-            </div>
+            
+                    
+                        {grabType.length?
+                            <div>
+                                {grabType.map((post, i) => (
+                                <Card key={i}>
+                                    <h1>Search Results</h1>
+                                    <Card.Title>{post.title}</Card.Title>
+                                    <Card.Text>{post.description}</Card.Text>
+                                </Card>))}
+                                </div>
+                                : 
+                                <div>    
+                                {posts.map((post, i) => (
+                                <div key={i}>{post.description}</div>))}   
+                            </div>    
+                        }
+            </div>            
+                   
+                         
+                
         )
     }
 }

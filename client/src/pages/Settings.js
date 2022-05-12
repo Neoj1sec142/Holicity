@@ -1,9 +1,9 @@
-// import React, { useState, useEffect } from 'react'
+
 import {Card} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const Settings = (props) => {
-    // const userId = props.user.id
+    
     const navigate = useNavigate()
 
     if(props.user){
@@ -18,10 +18,16 @@ const Settings = (props) => {
                     <Card.Link onClick={() => navigate('/signin')}>Log In Page</Card.Link>
                     <></>
                     <Card.Text>Getting Started:</Card.Text>
+                    <Card.Link onClick={() => navigate('/search')}>Getting Started</Card.Link>
                     <Card.Link onClick={() => navigate('/search')}>Search for Friends</Card.Link>
                     <Card.Link onClick={() => navigate('/browse')}>Browse the Vibes</Card.Link>
                     <Card.Link onClick={() => navigate('/news')}>Global News</Card.Link>
-                    <Card.Link onClick={() => navigate('/search')}>Getting Started</Card.Link>
+                    <></>
+                    <Card.Text>Creation Links:</Card.Text>
+                    <Card.Link onClick={() => navigate('/blog')}>Share Your Thoughts</Card.Link>
+                    <Card.Link onClick={() => navigate('/create')}>Create Your Own Vibe</Card.Link>
+                    <Card.Link onClick={() => navigate('/feed')}>Check The Recent Vibes Feed</Card.Link>
+                    
                 </Card>
             </div>
         )

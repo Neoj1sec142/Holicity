@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {CreatePost} from '../services/PostServices'
 import {Card} from 'react-bootstrap'
+import { allTypes } from '../components/allTypes'
 
 const Create = (props) => {
     const navigate = useNavigate()
@@ -12,20 +13,6 @@ const Create = (props) => {
         description: '',
         url: ''
     })
-
-    const allTypes = [
-        '----------------------------',
-        'Just Spreading Love',
-        'Picture',
-        'Poetry',
-        'Recipe',
-        'Recyclable Alternative',
-        'Wildlife Preservation/Restoration',
-        'Natural Health/Herbal Remedies',
-        'Fitness/Meditation',
-        'Fuel Alternatives',
-        'Green House Effect'
-    ]
 
     const handleChange = (e) => {
         setPost({...post, [e.target.name]: e.target.value})
