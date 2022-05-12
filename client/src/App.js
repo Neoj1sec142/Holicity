@@ -15,6 +15,7 @@ import Details from './pages/Details'
 import Settings from './pages/Settings'
 import Browse from './pages/Browse';
 import Blog from './pages/Blog';
+import News from './pages/News'
 import Messenger from './pages/Messenger'
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -96,6 +97,9 @@ function App(props) {
             />
             <Route path="/browse"
               element={<Browse user={user} authenticated={authenticated} />}
+            />
+            <Route path="/news"
+              element={<News user={user} authenticated={authenticated} />}
             />
             <Route path="/settings"
               element={<Settings user={user} authenticated={authenticated} />}

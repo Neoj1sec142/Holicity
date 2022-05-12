@@ -20,7 +20,7 @@ const Settings = (props) => {
                     <Card.Text>Getting Started:</Card.Text>
                     <Card.Link onClick={() => navigate('/search')}>Search for Friends</Card.Link>
                     <Card.Link onClick={() => navigate('/browse')}>Browse the Vibes</Card.Link>
-                    <Card.Link onClick={() => navigate('/search')}>Global News</Card.Link>
+                    <Card.Link onClick={() => navigate('/news')}>Global News</Card.Link>
                     <Card.Link onClick={() => navigate('/search')}>Getting Started</Card.Link>
                 </Card>
             </div>

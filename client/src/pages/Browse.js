@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GetPosts, GetPostByType } from '../services/PostServices'
-import {GetNews} from '../services/OutsideServices'
+
 import {Card} from 'react-bootstrap'
 
 
@@ -10,7 +10,7 @@ const Browse = () => {
     const [posts, setPosts] = useState([])
     const [post, setPost] = useState({})
     const [grabType, setGrabType] = useState([])
-    const [news, setNews] = useState([])
+    
 
     useEffect(() => {
         const getPosts = async () => {
@@ -40,19 +40,12 @@ const Browse = () => {
     ]
 
     const handleSelect = (e) => {
-        console.log(e.target.value, "SELECTION")
+        // console.log(e.target.value, "SELECTION")
         setBrowsed(e.target.value)
     }
-    // useEffect(() => {
-    //     const getNews = async () => {
-    //         const res = await GetNews()
-    //         setNews(res)
-    //     }
-    //     getNews()
-    // },[])
-//    console.log(news, "NEWS")
+   
     
-    if(posts && news){
+    if(posts){
         return(
             <div className='browse'>
                 <form >
@@ -67,7 +60,7 @@ const Browse = () => {
                         </select>
                     </div>
                 </form>
-                {browsed && news ? 
+                {browsed ? 
                     <div>
                         {grabType.map((post, i) => (
                             <Card key={i}>
@@ -79,14 +72,7 @@ const Browse = () => {
                     </div>
                     :
                     <div style={{maxWidth: '60%'}}>
-                        {/* {news.data.map((value, i) => (
-                        <Card key={i} className='d-flex justify-content-center'>
-                            <Card.Title>{value.title}</Card.Title>
-                            <img src={`${value.image_url}`} alt='text' target='_blank'/>
-                            <Card.Text>{value.description}</Card.Text>
-                            <a href={`${value.url}`} >Read More...</a>
-                        </Card>
-                        ))} */}
+                        
                     </div>
                 }
                
