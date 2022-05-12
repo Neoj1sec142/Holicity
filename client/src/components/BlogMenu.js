@@ -5,24 +5,27 @@ const BlogMenu = ({items, user, handleBlog}) => {
     const [dropdown, setDropdown] = useState(false);
    
  return (
-  <li  className='d-flex justify-content-center'>
+  <div style={{maxWidth: '60%'}}>
    {items.submenu ? (
     <>
-    <div className='tab-content' id='pills-tabContent'>
+    
+    <div  id='pills-tabContent'>
      <button
-        className="tab-pane fade active show " id="pills-home"
+         style={{marginLeft: '100%'}}
+        className="tab-pane fade active show" id="pills-home"
         aria-expanded={dropdown ? "true" : "false"}
         onClick={() => setDropdown((prev) => !prev)}
      >
       {items.title}{" "}
      </button>
      </div>
+     
      <BlogDrop submenus={items.submenu} dropdown={dropdown} user={user} handleBlog={handleBlog} setDropdown={setDropdown} />
     </>
    ) : (
     <a href="/#">{items.title}</a>
    )}
-  </li>
+  </div>
  );
 };
 

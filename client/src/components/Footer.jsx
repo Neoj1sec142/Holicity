@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Footer = () => {
     return (
-        <div className='card-footer'>
+        <div className='card-footer' style={{paddingBottom: '55px'}}>
           <div className='card-body align-bottom' >
             <img 
               style={{maxWidth: '40px'}}

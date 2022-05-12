@@ -71,7 +71,7 @@ const Blog = (props) => {
     
     return(
         <div className='blog'>
-            <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
+            <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '60%'}}>
                 <form className='card-overlay centered' onSubmit={(e) => handleSubmit(e)}>
                     <div className='d-flex justify-content-center' style={{paddingBottom: '15px'}}>
                         <h2>Topic:</h2>
@@ -107,8 +107,8 @@ const Blog = (props) => {
                     </div>
                     <button  />
                 </form >
-            </Card>
-            <div className='blog-card' style={{marginTop: '30em'}}>
+            </Card >
+            <div className='d-flex justify-content-center' style={{marginTop: '40em', maxWidth: '60%'}}>
                 {blogItems.map((menu, index) => (
                     <BlogMenu  items={menu} key={index} handleBlog={handleBlog} />
                 ))}

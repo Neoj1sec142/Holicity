@@ -12,12 +12,13 @@ import Profile from './pages/Profile'
 import ProfileUpdate from './pages/ProfileUpdate'
 import Footer from './components/Footer'
 import Details from './pages/Details'
-import './styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles/menu.css'
+import Settings from './pages/Settings'
 import Browse from './pages/Browse';
 import Blog from './pages/Blog';
 import Messenger from './pages/Messenger'
+import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/menu.css'
 
 
 
@@ -95,6 +96,9 @@ function App(props) {
             />
             <Route path="/browse"
               element={<Browse user={user} authenticated={authenticated} />}
+            />
+            <Route path="/settings"
+              element={<Settings user={user} authenticated={authenticated} />}
             />
             <Route path="/messenger"
               element={<Messenger user={user} authenticated={authenticated} />}

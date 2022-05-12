@@ -37,6 +37,9 @@ export const menuItems = [
      title: "Settings",
      submenu: [
         {
+         title: "settings"
+        },
+        {
          title: "profile_update"
         },
         {
