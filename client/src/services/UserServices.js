@@ -56,9 +56,9 @@ export const GetFollowingByFollower = async (id) => {
       } catch (error) {throw error}
 }
 
-export const GetUserByName = async (username) => {
-    try {
-        const res = await Client.get(`users/byusername/${username}`)
-        return res.data
-    } catch (error) {throw error}
-}
+// export const GetUserByName = async (username) => {
+//     try {
+//         const res = await Client.get(`users/byusername/${username}`)
+//         return res.data
+//     } catch (error) {throw error}
+// }

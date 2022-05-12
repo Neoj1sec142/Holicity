@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import {GetUserByName} from '../services/UserServices'
+import {GetUserDetail} from '../services/UserServices'
 
 const Dropdown = ({submenus, dropdown, user}) => {
   const [profileUser, setProfileUser] = useState({})
   
   useEffect(() => {
-    if(profileUser){
+    
         const getUserData = async () => {
-            const data = await GetUserByName(profileUser)
+            const data = await GetUserDetail(user.id)
             setProfileUser(data)
         }
         getUserData()
-    }
-  }, [profileUser, user])
+    
+  }, [profileUser])
   
   return (
       <ul className={`dropdown ${dropdown ? "show" : ""}`}>
