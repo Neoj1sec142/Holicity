@@ -62,16 +62,7 @@ function App(props) {
         
       </div>
       <div className='app_main'>
-        <div className='d-flex flex-column min-vh-100'
-          style={{
-            backgroundRepeat: 'no-repeat',
-            backgroundImage:`url(${hbackground})`,
-            backgroundSize: '80%',
-            opacity: '78%',
-            marginLeft: '10%',
-            
-          }}
-        >
+        <div className='d-flex flex-column min-vh-100'>
           <Routes>
               <Route path="/" element={<Home />}  />
             <Route
