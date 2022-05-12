@@ -26,7 +26,7 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="" style={{maxWidth: '70%'}}>
+    <div className="home" style={{maxWidth: '70%'}}>
       <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
         <form className="col" onSubmit={handleSubmit} >
           <div className="d-flex justify-content-center">

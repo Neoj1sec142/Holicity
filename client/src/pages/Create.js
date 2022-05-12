@@ -42,7 +42,7 @@ const Create = (props) => {
 
     return(
         <div className='create'>
-           <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '500px'}}>
+           <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '60%', marginTop: '5em'}}>
             <form className='card-overlay centered' onSubmit={handleSubmit}>
                 <h3 className='d-flex justify-content-center' style={{paddingBottom: '15px'}}>~ Spread the Energy ~</h3>
                 <div className='d-flex justify-content-center' style={{paddingBottom: '15px'}}>

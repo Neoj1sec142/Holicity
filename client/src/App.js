@@ -20,6 +20,7 @@ import Messenger from './pages/Messenger'
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
+import hbackground from './assets/world_in_hand.jpeg'
 
 
 
@@ -61,11 +62,21 @@ function App(props) {
         
       </div>
       <div className='app_main'>
-        <div className='d-flex flex-column min-vh-100'>
+        <div className='d-flex flex-column min-vh-100'
+          style={{
+            backgroundRepeat: 'no-repeat',
+            backgroundImage:`url(${hbackground})`,
+            backgroundSize: '80%',
+            opacity: '78%',
+            marginLeft: '10%',
+            
+          }}
+        >
           <Routes>
-            <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home />}  />
             <Route
               path="/signin"
+              className="home"
               element={
                 <SignIn
                   setUser={setUser}
@@ -73,7 +84,7 @@ function App(props) {
                 />
               }
             />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Register />} className="home"/>
             <Route path="/feed"
               element={<Feed user={user} authenticated={authenticated} />}
             />
