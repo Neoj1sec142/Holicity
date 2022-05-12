@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import { GetUserDetail, UpdateProfile } from '../services/UserServices'
+import {Card} from 'react-bootstrap'
 
 
 
@@ -29,10 +30,12 @@ const ProfileUpdate = (props) => {
       await UpdateProfile(props.user.id, userDetails) 
       navigate(`/profile/${props.user.id}`)
   }
-
+  console.log(userDetails, "UDUDUUDUDUDU")
     if (userDetails.id) {
       return(
-        <form className='profile-update-container card-overlay centered' onSubmit={handleSubmit}>
+        <Card className='position-absolute top-50 start-50 translate-middle'
+              style={{maxWidth: '60%', marginTop: '5em'}}>
+        <form  onSubmit={handleSubmit}>
           <h3>Update Profile</h3>
           
           <div className='profile-update-pic'>
@@ -48,6 +51,7 @@ const ProfileUpdate = (props) => {
               type='url' 
               value={userDetails.profileImg} 
               name='profileImg' 
+              placeholder='Profile Picture Url Here'
               maxLength='255'/>            
           </div>
 
@@ -57,7 +61,8 @@ const ProfileUpdate = (props) => {
               onChange={handleChange}
               type='text' 
               value={userDetails.fullname} 
-              name='fullname' 
+              name='fullname'
+              placeholder='Profile Username Here' 
               maxLength='255'
               required 
             />
@@ -72,17 +77,17 @@ const ProfileUpdate = (props) => {
               maxLength='255'/>
           </div>
           <div className='input-wrapper'>
-            <label htmlFor='profileDescription'>About You: </label>
+            <label htmlFor='bio'>About You: </label>
             <br />
             <textarea 
               onChange={handleChange}
-              value={userDetails.profileDescription} 
-              name='profileDescription' 
+              value={userDetails.bio} 
+              name='bio' 
             />
           </div>
-
           <button type='submit'>Save</button>
         </form> 
+        </Card>
       )
     } else {
         return (
