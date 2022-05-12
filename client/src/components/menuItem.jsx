@@ -47,10 +47,6 @@ export const menuItems = [
         {
          title: "Getting Started",
          value: 'getting'
-        },
-        {
-         title: "About",
-         value: ''
         }
        ]
     }

@@ -10,7 +10,7 @@ const Settings = (props) => {
         return (
             <div>
                 <Card style={{textAlign: 'center'}}>
-                    <Card.Title>Settings and Links:</Card.Title>
+                    <Card.Title style={{textDecoration: 'underline'}}>Settings and Links:</Card.Title>
                     <></>
                     <Card.Text>Landing Options:</Card.Text>
                     <Card.Link onClick={() => navigate('/')}>Home Page</Card.Link>
@@ -29,7 +29,7 @@ const Settings = (props) => {
                     <></>
                     <Card.Text>About Holicity:</Card.Text>
                     <Card.Link onClick={() => navigate('/blog')}>About</Card.Link>
-                    <a href="http://neo_portfolio_142.surge.sh" target={"_blank"} rel="noreferrer">Contact the Creator</a>
+                    <a href="http://neo_portfolio_142.surge.sh" target={"_blank"} rel="noreferrer">Contact Holicity</a>
                 </Card>
             </div>
         )

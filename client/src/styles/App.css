@@ -18,6 +18,17 @@ html, .App, * {
   width: 100%;
   
 }
+.App{
+  color:black;
+  background-image: url('../assets/banner.jpeg');
+}
+form{
+  background-image: url('../assets/holistic-spiritual-healing.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 100%;
+}
 
 html {
   min-height: 100vh;
@@ -30,6 +41,7 @@ html {
   border-right: 120px solid black;
   border-left: 120px solid black;
   background-image: url('../assets/greener_1.jpeg');
+  fill-opacity: var(--custom-gradient);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
