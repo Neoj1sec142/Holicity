@@ -9,7 +9,7 @@ const Settings = (props) => {
     if(props.user){
         return (
             <div>
-                <Card>
+                <Card style={{textAlign: 'center'}}>
                     <Card.Title>Settings and Links:</Card.Title>
                     <></>
                     <Card.Text>Landing Options:</Card.Text>
@@ -20,14 +20,16 @@ const Settings = (props) => {
                     <Card.Text>Getting Started:</Card.Text>
                     <Card.Link onClick={() => navigate('/search')}>Getting Started</Card.Link>
                     <Card.Link onClick={() => navigate('/search')}>Search for Friends</Card.Link>
-                    <Card.Link onClick={() => navigate('/browse')}>Browse the Vibes</Card.Link>
                     <Card.Link onClick={() => navigate('/news')}>Global News</Card.Link>
                     <></>
                     <Card.Text>Creation Links:</Card.Text>
                     <Card.Link onClick={() => navigate('/blog')}>Share Your Thoughts</Card.Link>
                     <Card.Link onClick={() => navigate('/create')}>Create Your Own Vibe</Card.Link>
                     <Card.Link onClick={() => navigate('/feed')}>Check The Recent Vibes Feed</Card.Link>
-                    
+                    <></>
+                    <Card.Text>About Holicity:</Card.Text>
+                    <Card.Link onClick={() => navigate('/blog')}>About</Card.Link>
+                    <a href="http://neo_portfolio_142.surge.sh" target={"_blank"} rel="noreferrer">Contact the Creator</a>
                 </Card>
             </div>
         )

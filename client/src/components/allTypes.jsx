@@ -13,5 +13,6 @@ export const allTypes = [
     'Soka Gakkai International',
     'Spirituality',
     'Organics',
-    'How to DIY'
+    'How to DIY',
+    'Suggestion to the Creator'
 ]

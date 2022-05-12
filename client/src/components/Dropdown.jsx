@@ -19,9 +19,9 @@ const Dropdown = ({submenus, dropdown, user}) => {
         {submenus.map((submenu, index) => (
           <li key={index} className="menu-items">
             {submenu.title === 'profile' ?
-              <a href={`/${submenu.title}/${user.id}`}>{submenu.title}</a>
+              <a href={`/${submenu.value}/${user.id}`}>{submenu.title}</a>
               :
-              <a href={`/${submenu.title}/`}>{submenu.title}</a>
+              <a href={`/${submenu.value}/`}>{submenu.title}</a>
             }
             
           </li>

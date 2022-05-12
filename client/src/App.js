@@ -13,14 +13,14 @@ import ProfileUpdate from './pages/ProfileUpdate'
 import Footer from './components/Footer'
 import Details from './pages/Details'
 import Settings from './pages/Settings'
-import Browse from './pages/Browse';
+import Getting from './pages/GettingSt'
 import Blog from './pages/Blog';
 import News from './pages/News'
 import Messenger from './pages/Messenger'
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
-import hbackground from './assets/world_in_hand.jpeg'
+// import hbackground from './assets/world_in_hand.jpeg'
 
 
 
@@ -95,8 +95,8 @@ function App(props) {
             <Route path="/search"
               element={<Search user={user} authenticated={authenticated} />}
             />
-            <Route path="/browse"
-              element={<Browse user={user} authenticated={authenticated} />}
+            <Route path="/getting"
+              element={<Getting user={user} authenticated={authenticated} />}
             />
             <Route path="/news"
               element={<News user={user} authenticated={authenticated} />}

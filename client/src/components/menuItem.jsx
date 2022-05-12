@@ -3,19 +3,20 @@ export const menuItems = [
      title: "Home",
      submenu: [
         {
-         title: "feed"
+         title: "Recent Feed",
+         value: 'feed'
         },
         {
-         title: "blog",
+         title: "Blog",
+         value: 'blog'
         },
         {
-         title: "search"
+         title: 'Create a Vibe',
+         value: 'create'
         },
         {
-         title: 'browse'
-        },
-        {
-         title: 'create'
+         title: 'Global News',
+         value: 'news'
         }
        ]
     },
@@ -23,13 +24,16 @@ export const menuItems = [
      title: "Profile",
      submenu: [
         {
-         title: "profile"
+         title: "Your Profile",
+         value: 'profile'
         },
         {
-         title: "search",
+         title: "Search Friends",
+         value: 'search'
         },
         {
-         title: "messenger",
+         title: "Messenger",
+         value: 'messenger'
         }
        ]
     },
@@ -37,16 +41,16 @@ export const menuItems = [
      title: "Settings",
      submenu: [
         {
-         title: "settings"
+         title: "Settings",
+         value: 'settings'
         },
         {
-         title: "profile_update"
+         title: "Getting Started",
+         value: 'getting'
         },
         {
-         title: "about",
-        },
-        {
-         title: "contact"
+         title: "About",
+         value: ''
         }
        ]
     }
