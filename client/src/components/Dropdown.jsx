@@ -12,7 +12,7 @@ const Dropdown = ({submenus, dropdown, user}) => {
         }
         getUserData()
     
-  }, [profileUser])
+  }, [user.id])
   
   return (
       <ul className={`dropdown ${dropdown ? "show" : ""}`}>

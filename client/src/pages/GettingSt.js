@@ -1,30 +1,12 @@
 import {Card} from 'react-bootstrap'
-import {GetUserDetail} from '../services/UserServices'
-import { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
 
-const Getting = () => {
-    const [proUser, setProUser] = useState({})
-    const params = useParams()
-    // console.log(props, "PROPS")
-    // const user_id = parseInt(props.user.id)
-    const {user_id} = params
-    // const user = props.user.id
-    useEffect(() => {
-        if(!isNaN(user_id)){
-            const getUser = async () => {
-                const data = await GetUserDetail(user_id)
-                setProUser(data)
-            }
-            getUser()
-        }
-        
-    },[user_id])
-    if(proUser){
+const Getting = (props) => {
+      
+    if(props.user){
         return(
             <Card style={{maxWidth: '60%', marginTop: '5em', textAlign: 'center'}} className="position-absolute top-50 start-50 translate-middle">
-                {proUser 
-                ?   <Card.Title>~ Welcome to our family {proUser.username}! ~</Card.Title>
+                {props.user 
+                ?   <Card.Title>~ Welcome to our family {props.user.username}! ~</Card.Title>
                 :   <Card.Title>~ Welcome to our family! ~</Card.Title>}
                 <Card.Text>
                     You just being here gives the world hope. Holicity is a social platform for people 
