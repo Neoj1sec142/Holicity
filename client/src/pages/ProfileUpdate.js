@@ -30,13 +30,13 @@ const ProfileUpdate = (props) => {
       await UpdateProfile(props.user.id, userDetails) 
       navigate(`/profile/${props.user.id}`)
   }
-  console.log(userDetails, "UDUDUUDUDUDU")
+  
     if (userDetails.id) {
       return(
         <Card className='position-absolute top-50 start-50 translate-middle'
               style={{maxWidth: '60%', marginTop: '5em'}}>
         <form  onSubmit={handleSubmit}>
-          <h3>Update Profile</h3>
+          <h3 style={{textAlign: 'center'}}>Update Profile</h3>
           
           <div className='profile-update-pic'>
             {userDetails.profileImg ? 
