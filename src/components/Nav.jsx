@@ -9,14 +9,10 @@ const Nav = ({ authenticated, user, handleLogOut, props }) => {
       
       <section className='navbar navbar-expand-xl navbar-dark bg-dark fixed-bottom'>
         <nav id='navbar' className='d-flex flex-row justify-content-around' role='navigation'>
-          <h3>Logged in as {user.username}!</h3>
+          <h3>Logged in as </h3>
             <nav className='menu'>
-              <ul className="menus">
-                {/* <Link className='links' to="/feed">Feed</Link>
-                <Link className='links' to="/browse">Browse</Link>
-                <Link className='links' to={`/profile/${user.username}`}>Profile</Link>
-                <Link className='links' to="/create">Create</Link>
-                <Link className='links' to="/search">Search</Link> */}
+              <ul className="menus" >
+                <li style={{color: 'white'}}>Logged in as: {user.username}!</li>
                 <Link className='links' onClick={handleLogOut} to="/">
                   Sign Out
                 </Link>

@@ -40,7 +40,8 @@ const Profile = (props) => {
         const getFollowing = async () => {
             if (profileUser) {
                 const amFollowing = await GetFollowingByFollower(profileUser)
-                setFollowing(amFollowing[0].following)
+                console.log(amFollowing, 'THIS ONE')
+                setFollowing(amFollowing)
             }
         }
         getFollowers()
@@ -76,13 +77,15 @@ const Profile = (props) => {
         }
     }
 
+    
+
     const navUp = () => {
         navigate('update')
     }
-    // console.log(profileUser, "HEYY")
-    if(props.authenticated && user.id){
+    console.log(following, "HEYY")
+    if(props.authenticated && user.id && following && followers){
         return(
-            <div className='profile'>
+            <div className='profile' style={{maxWidth: '60%'}}>
                 <Card className='d-flex flex-row justify-content-center' >
                 <div className='d-flex align-items-center' style={{maxWidth: '60%'}}>
                     {user.profileImg 
@@ -93,6 +96,9 @@ const Profile = (props) => {
                         <Card.Title>{user.username}</Card.Title>
                         <Card.Text>Name: {user.fullname}</Card.Text>
                         <Card.Text>Email: {user.email}</Card.Text>
+                        <Card.Text>Followers: {followers.length}</Card.Text>
+                        <Card.Text>Following: {following.length}</Card.Text>
+                        
                         {props.user.id === parseInt(profileUser) 
                             ?   <button onClick={() => navUp()}>Edit Profile</button>
                             :   <button onClick={(e) => handleClick(e)}>
@@ -103,6 +109,7 @@ const Profile = (props) => {
                         :   <div></div>
                         } */}
                     </div>
+                    
                 </div>
                 </Card>
                 <Card className='d-flex flex-row justify-content-center'>
