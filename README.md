@@ -13,13 +13,15 @@ Holicity is a user based platform for social networking to promote a greener ear
 ***
 ### Tech Used:
 * React
-* React-Router
+* React-Router-Dom
+* React-Bootstrap
+* React-Stars
 * Axios
-* Python
+* Bootstrap
 * Express
-* Django(possible)
+* Sequelize
 * PostgreSQL
-* Django REST Framework(possible)
+* Heroku
 
 ***
 ### Social Links:
