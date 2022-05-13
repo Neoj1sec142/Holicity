@@ -86,12 +86,12 @@ const Profile = (props) => {
                 <Card className='d-flex flex-row justify-content-center' >
                 <div className='d-flex align-items-center' style={{maxWidth: '60%'}}>
                     {user.profileImg 
-                        ?   <img src={`${user.profileImg}`} alt='profile-img' style={{maxWidth: '90px'}}/>
+                        ?   <img src={`${user.profileImg}`} alt='profile-img' style={{maxWidth: '90px', borderRadius: '50px'}}/>
                         :   <img src='../assets/no_img.jpeg' alt='no-profile-img'/>
                     }
                     <div className='d-flex justify-content-center'>
                         <Card.Title>{user.username}</Card.Title>
-                        <Card.Text>Name: {user.fullName}</Card.Text>
+                        <Card.Text>Name: {user.fullname}</Card.Text>
                         <Card.Text>Email: {user.email}</Card.Text>
                         {props.user.id === parseInt(profileUser) 
                             ?   <button onClick={() => navUp()}>Edit Profile</button>

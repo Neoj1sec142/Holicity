@@ -67,7 +67,7 @@ const Feed = (props) => {
                         <div className='border border-5 border-primary' onClick={() => navigate(`/profile/${post.userId}`)} >
                         {post.User.profileImg 
                             ?   <img src={`${post.User.profileImg}`} className="d-flex justify-content-start"
-                            alt='profile-img' style={{maxWidth: '50px'}}/>
+                            alt='profile-img' style={{maxWidth: '50px', borderRadius: '50px'}}/>
                             :   <img src='../assets/no_img.jpeg' className="d-flex justify-content-center"
                             alt='no-profile-img'/>
                         }

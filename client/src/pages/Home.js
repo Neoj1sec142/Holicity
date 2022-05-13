@@ -8,7 +8,7 @@ const Home = () => {
   return (
     
     <div className="d-flex justify-content-center" >
-      <Card className="position-absolute top-50 start-50 translate-middle" style={{maxWidth: '70%', padding: '30px'}}>
+      <Card className="position-absolute top-50 start-50 translate-middle" style={{maxWidth: '70%', padding: '30px', opacity: '85%'}}>
         <Card.Title className='d-flex justify-content-center'>~ Greener Earth Starts Here ~</Card.Title>
         <Card.Body>
           <section className="d-flex justify-content-center">

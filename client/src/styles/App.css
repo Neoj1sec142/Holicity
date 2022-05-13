@@ -20,14 +20,17 @@ html, .App, * {
 }
 .App{
   color:black;
-  background-image: url('../assets/banner.jpeg');
+  background-image: url('../assets/mbs.webp');
+  background-repeat: repeat-y;
+  background-size: 100%;
 }
+
 form{
-  background-image: url('../assets/holistic-spiritual-healing.jpeg');
+  background-color: var(--custom-gradient);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
-  opacity: 100%;
+  opacity: 85%;
 }
 
 html {
@@ -37,23 +40,20 @@ html {
 } 
 
 .feed{
+  max-width: 60%;
   text-align: center;
-  border-right: 120px solid black;
-  border-left: 120px solid black;
-  background-image: url('../assets/greener_1.jpeg');
   fill-opacity: var(--custom-gradient);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   height: 100%;
+  margin: 0 auto;
 }
 
 .details{
   display: flex;
-  height: 400px;
+  
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 60%;
   text-align: center;
   margin: 0 auto;
   padding: 1em;

@@ -47,9 +47,9 @@ export const CreateBlog = async (user_id, blog) => {
     }catch(err){throw err}
 }
 
-export const RemoveBlog = async (id) => {
+export const RemoveBlog = async (blog_id) => {
     try{
-        await Client.delete(`blogs/delete/${id}`)
+        await Client.delete(`blogs/delete/${blog_id}`)
         .then((res) => console.log(res, "Successfully removed blog"))
         .catch((error) => console.log(error))
     } catch (err) {

@@ -8,20 +8,20 @@ const News = (props) => {
         const getNews = async () => {
             
             const res = await GetNews()
-            console.log(res,"HERE")
-            setNews(res)
+            
+            setNews(res.data)
         }
         getNews()
     },[])
-    console.log(news, "NEWS")
-
-    if(news){
+    
+    
+    if(news && props.user){
         return(
             
             <div className='d-flex justify-content-center' style={{marginTop: '5em'}}>
                 <Card style={{maxWidth: '60%'}}>
                     <Card.Title style={{textAlign: 'center'}}>Top Global News:</Card.Title>
-                    {news.data.map((value, i) => (
+                    {news.map((value, i) => (
                     <Card key={i} className='d-flex justify-content-center'>
                         <Card.Title>{value.title}</Card.Title>
                         <img src={`${value.image_url}`} alt='text' target='_blank'/>

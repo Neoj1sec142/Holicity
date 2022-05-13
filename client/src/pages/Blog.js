@@ -108,7 +108,7 @@ const Blog = (props) => {
                     showBlog.map((blog, i) => (
                     <BlogCard key={i} blog={blog}/>))
                     :   blogPost.map((blog, i) => (
-                        <BlogCard key={i} blog={blog} />))
+                        <BlogCard key={i} blog={blog} user={props.user}/>))
                     }
                 </div>  
                 

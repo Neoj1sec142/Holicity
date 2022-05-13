@@ -8,6 +8,7 @@ export const allTypes = [
     'Fitness',
     'Gas Alternatives',
     'Green House Effect',
+    'Just Spreading Love',
     'Politics',
     'United Nations',
     'Soka Gakkai International',

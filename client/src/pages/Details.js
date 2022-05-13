@@ -68,6 +68,7 @@ const Details = () => {
                 <h5>Posted by: {det.User.username}</h5> 
                 <img src={det.image} alt='vibe'/>
                 <h3>Url: <a href={det.url}  target="_blank"rel="noreferrer"> {det.url} </a></h3>
+                <h3>Type: {det.type}</h3>
                 <p>Description: {det.description}</p>
                 {toggleComm &&
                     <div>
