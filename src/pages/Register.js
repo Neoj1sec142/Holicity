@@ -48,7 +48,7 @@ const Register = () => {
               type="text"
               placeholder="Full Name.."
               value={newUser.fullname}
-              maxlength='255'
+              maxLength='255'
               required
             />
           </div>
@@ -60,7 +60,7 @@ const Register = () => {
               type="username"
               placeholder="Username.."
               value={newUser.username}
-              maxlength='25'
+              maxLength='25'
               required
             />
           </div>
@@ -72,7 +72,7 @@ const Register = () => {
               type="email"
               placeholder="Email@email.com"
               value={newUser.email}
-              maxlength='255'
+              maxLength='255'
               required
             />
           </div>
@@ -85,7 +85,7 @@ const Register = () => {
               name="password"
               placeholder="************"
               value={newUser.password}
-              maxlength='255'
+              maxLength='255'
               required
             />
           </div>
@@ -97,7 +97,7 @@ const Register = () => {
               name="confirmPassword"
               placeholder="************"
               value={newUser.confirmPassword}
-              maxlength='255'
+              maxLength='255'
               required
             />
           </div>

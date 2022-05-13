@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { AllUsersWFollowers } from '../services/UserServices'
 import {Card} from 'react-bootstrap'
+import noImg from '../assets/no_img.jpeg'
 
 const Search = (props) => {
     const [users, setUsers] = useState([])
@@ -62,14 +63,14 @@ const Search = (props) => {
                         </div>
                     ))}
                     {!search.length ?  
-                    <div style={{marginTop: '5em', flexDirection: 'column'}} className='d-flex justify-content-center '>
-                        <h2 className='d-flex justify-content-center'> All Users</h2> 
-                        <Card style={{maxWidth: '60%', padding: '10px', maxHeight: '90px'}} className='d-flex justify-content-center start-50 translate-middle'>
+                    <div style={{marginTop: '5em', flexDirection: 'row'}} className='d-flex justify-content-center '>
+                        <h2 > All Users</h2> 
+                        <Card style={{maxWidth: '60%', padding: '10px', marginTop: '7em'}} className='position-absolute top-50 start-50 translate-middle'>
                         {users.map((user, i) => (
-                        <div className='d-flex justify-content-center align-items-center' key={i}>
+                        <div className='search' key={i} style={{flexDirection: 'row'}}>
                             {user.profileImg 
                             ?   <img className='img-thumbnail'  src={`${user.profileImg}`} style={{maxWidth: '80px'}} alt='text'></img> 
-                            :   <img className='img-thumbnail' src='../assets/no_img.jpeg' alt='text'></img>
+                            :   <img className='img-thumbnail' src={`${noImg}`} style={{maxWidth: '80px'}} alt='no_profile_picture'></img>
                         }
                         <div className='profile-info-container'>
                         <h2><Link to={`/profile/${user.id}`}>{user.username}</Link></h2>

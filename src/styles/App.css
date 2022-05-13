@@ -43,6 +43,7 @@ html {
 .feed{
   max-width: 60%;
   text-align: center;
+  opacity: 85%;
   fill-opacity: var(--custom-gradient);
   height: 100%;
   margin: 0 auto;
@@ -63,3 +64,13 @@ html {
   background: var(--custom-gradient);
 }
 
+.card{
+ opacity: 85%; 
+}
+.search h2{
+  text-align: center;
+  color: white;
+}
+.img-thumbnail{
+  border-radius: 50%;;
+}

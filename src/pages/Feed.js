@@ -64,7 +64,7 @@ const Feed = (props) => {
                 <Card.Title className='text-decoration-underline'>Check Recent Vibes</Card.Title>
                 {feed.sort((a,b) => {return (a.updatedAt < b.updatedAt) ? 1 : -1} ).map((post, i) => (
                     <Card.Body key={i} className='post-container'>
-                        <div className='border border-5 border-primary' onClick={() => navigate(`/profile/${post.userId}`)} >
+                        <div className='border border-5 border' onClick={() => navigate(`/profile/${post.userId}`)} >
                         {post.User.profileImg 
                             ?   <img src={`${post.User.profileImg}`} className="d-flex justify-content-start"
                             alt='profile-img' style={{maxWidth: '50px', borderRadius: '50px'}}/>
