@@ -2,7 +2,7 @@ import Axios from 'axios'
 
 // export const BASE_URL = 'http://localhost:3001' 
 export const BASE_URL = 'https://holicity-back.herokuapp.com' 
-const Client = Axios.create({ baseURL: BASE_URL })
+const Client = Axios.create({ baseURL: BASE_URL }, {mode: 'CORS'})
 
 
 Client.interceptors.request.use(
