@@ -24,7 +24,7 @@ const News = (props) => {
                     {news.map((value, i) => (
                     <Card key={i} className='d-flex justify-content-center'>
                         <Card.Title>{value.title}</Card.Title>
-                        <img src={`${value.image_url}`} alt='text' target='_blank'/>
+                        <img src={`${value.image_url}`} alt='text' target='_blank' style={{maxWidth: '40%', margin: '0 auto'}}/>
                         <Card.Text>{value.description}</Card.Text>
                         <a href={`${value.url}`} target='_blank' rel="noreferrer" >Read More...</a>
                     </Card>

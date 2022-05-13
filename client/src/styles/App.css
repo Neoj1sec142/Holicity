@@ -23,6 +23,7 @@ html, .App, * {
   background-image: url('../assets/mbs.webp');
   background-repeat: repeat-y;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 form{
