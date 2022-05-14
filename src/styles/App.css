@@ -66,8 +66,16 @@ html {
 .profile{
   margin: 0 auto;
 }
+.settings{
+  display: flex;
+  justify-content: center;
+}
+
 .card{
  opacity: 85%; 
+}
+.search{
+  border: 2px solid black;
 }
 .search h2{
   text-align: center;

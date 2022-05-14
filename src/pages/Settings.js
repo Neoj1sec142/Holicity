@@ -8,8 +8,8 @@ const Settings = (props) => {
 
     if(props.user){
         return (
-            <div>
-                <Card style={{textAlign: 'center'}}>
+            <div className="settings">
+                <Card style={{textAlign: 'center', maxWidth: '60%'}}>
                     <Card.Title style={{textDecoration: 'underline'}}>Settings and Links:</Card.Title>
                     <></>
                     <Card.Text>Landing Options:</Card.Text>
