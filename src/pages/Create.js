@@ -77,7 +77,6 @@ const Create = (props) => {
                         value={post.description}
                         name='description'
                         placeholder='~Wisdom Goes Here~'
-                        maxLength='255'
                     />
                 </div>
                 <div className='d-flex justify-content-center align-items-center' style={{padding: '10px'}}>
