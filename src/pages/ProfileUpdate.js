@@ -6,7 +6,6 @@ import {Card} from 'react-bootstrap'
 
 
 const ProfileUpdate = (props) => {
-     
   const [userDetails, setUserDetails] = useState({})
     
   useEffect(() => {

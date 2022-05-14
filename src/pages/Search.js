@@ -20,12 +20,13 @@ const Search = (props) => {
     const handleChange = (e) => {
         setQuery(e.target.value)
     }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const res = users.filter((item) => item.username.toLowerCase().includes(query.toLowerCase()))
         setSearch(res)
-        console.log("RES", res)
     }   
+
     if (users.length){
         return(
             <div className='search'>

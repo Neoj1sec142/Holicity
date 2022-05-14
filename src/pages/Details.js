@@ -19,7 +19,6 @@ const Details = () => {
     
 
     useEffect(() => {
-        
         const getData = async () => {
             const data = await GetPostDetail(post_id)
             setDet(data)
@@ -33,6 +32,7 @@ const Details = () => {
     const handleChange = async (e) => {
         setComment({...comment, [e.target.name]: e.target.value})
     }
+
     const handleStars = (e) => {
         setComment({...comment, rating: e})
     }
@@ -41,7 +41,6 @@ const Details = () => {
         const user_id = det.id
         e.preventDefault()
         if (toggleComm){
-            // console.log("HEY")
             CreateComment(user_id, post_id, comment)
             window.top.location.reload(true)
             setToggleComm(false)
@@ -50,7 +49,6 @@ const Details = () => {
         }
     }
 
-    console.log(postComments, "DETAILS")
     if(det.id){
         return(
             <div className='details' style={{flexDirection: 'column'}}>

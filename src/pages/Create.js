@@ -17,10 +17,11 @@ const Create = (props) => {
     const handleChange = (e) => {
         setPost({...post, [e.target.name]: e.target.value})
     }
+
     const handleSelect = (e) => {
-        console.log(e.target.value)
         setPost({...post, [e.target.name]: e.target.value})
     }
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         await CreatePost(props.user.id, post)

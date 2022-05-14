@@ -11,7 +11,6 @@ const Profile = (props) => {
     const navigate = useNavigate()
     const params = useParams()
     const profileUser = params.username
-    // console.log(profileUser)
 
     const [user, setUser] = useState({})
     const [posts, setPosts] = useState([])
@@ -66,6 +65,7 @@ const Profile = (props) => {
             window.location.reload(false)
         }
     }
+
     //function to handle the edit/follow btn
     const handleClick = async () => {
         if(followers.filter((fol) => fol.id === props.user.id).length === 0){
@@ -77,12 +77,10 @@ const Profile = (props) => {
         }
     }
 
-    
-
     const navUp = () => {
         navigate('update')
     }
-    console.log(following, "HEYY")
+
     if(props.authenticated && user.id && following && followers){
         return(
             <div className='profile' style={{maxWidth: '60%'}}>

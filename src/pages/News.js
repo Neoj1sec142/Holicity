@@ -6,14 +6,11 @@ const News = (props) => {
 
     useEffect(() => {
         const getNews = async () => {
-            
             const res = await GetNews()
-            
             setNews(res.data)
         }
         getNews()
     },[])
-    
     
     if(news && props.user){
         return(

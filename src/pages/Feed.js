@@ -13,11 +13,10 @@ const Feed = (props) => {
     const [feed, setFeed] = useState({})
     const [browsed, setBrowsed] = useState('')
     const [grabType, setGrabType] = useState([])
-    // const [post, setPost] = useState({})
+
     useEffect(() => {
         const GetData = async () =>{
             const data = await GetPosts()
-            // console.log(data)
             setFeed(data)
         }
         if(browsed !== '---------------------------'){
@@ -33,11 +32,9 @@ const Feed = (props) => {
     
 
     const handleSelect = (e) => {
-        // console.log(e.target.value, "SELECTION")
         setBrowsed(e.target.value)
     }
 
-    console.log(feed, "FEED")
     if(feed.length){
     return (
         <div className='feed'>

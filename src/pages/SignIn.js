@@ -6,7 +6,6 @@ import {Card} from 'react-bootstrap'
 const SignIn = (props) => {
 
   let navigate = useNavigate()
-  
   const [user, setUser] = useState({ username: '', password: '' })
 
   const handleChange = (e) => {
@@ -16,9 +15,6 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(user)
-
-    console.log("handleSubmit PAYLOAD", payload)
-    
     props.setUser(payload)
     props.toggleAuthenticated(true)
     setUser({ username: '', password: '' })

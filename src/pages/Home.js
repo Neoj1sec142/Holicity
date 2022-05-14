@@ -9,7 +9,7 @@ const Home = () => {
     
     <div className="d-flex justify-content-center" >
       <Card className="position-absolute top-50 start-50 translate-middle" style={{maxWidth: '70%', padding: '30px', opacity: '85%'}}>
-        <Card.Title className='d-flex justify-content-center'>~ Greener Earth Starts Here ~</Card.Title>
+        <Card.Title className='d-flex justify-content-center' style={{textDecoration: 'underline'}}>~ Greener Earth Starts Here ~</Card.Title>
         <Card.Body>
           <section className="d-flex justify-content-center">
           <button onClick={() => navigate('/signin')} style={{maxWidth: '100px'}}

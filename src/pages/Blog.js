@@ -59,7 +59,6 @@ const Blog = (props) => {
         setSelection(e.target.name)
     }
 
-    
     return(
         <div className='blog'>
             <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '60%', opacity: '85%'}}>
