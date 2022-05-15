@@ -8,6 +8,7 @@ Holicity is a user based platform for social networking to promote a greener ear
 ![CHD](./src/assets/CHD%20End.png)
 ***
 ## WireFrame:
+![CHD](./src/assets/Wireframe.png)
 ***
 [Trello](https://trello.com/b/aycojdND/holicity)
 ***
