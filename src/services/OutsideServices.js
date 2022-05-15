@@ -1,5 +1,5 @@
 import axios from 'axios'
-// const API_KEY = process.env.API_KEY
+
 
 export const GetNews = async () => {
     try{

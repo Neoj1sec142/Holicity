@@ -11,6 +11,7 @@ const Dropdown = ({submenus, dropdown, user}) => {
         }
         getUserData()
   }, [user.id])
+  
   if(profileUser){
   return (
       <ul className={`dropdown ${dropdown ? "show" : ""}`}>

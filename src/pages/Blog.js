@@ -8,7 +8,7 @@ import BlogCard from '../components/BlogCard'
 import { allTypes } from '../components/allTypes'
 
 const Blog = (props) => {
-    
+    const [profileUser, setProfileUser] = useState({})
     const [blogPost, setBlogPost] = useState([])
     const [selection, setSelection] = useState("")
     const [showBlog, setShowBlog] = useState([])
@@ -17,21 +17,27 @@ const Blog = (props) => {
         thoughts: '',
         url: ''
     })
-   
+    
     useEffect(() => {
+        const getProfileUser = async () => {
+            if(props.user){
+                setProfileUser(props.user)
+            }
+        }
         const getData = async () => {
             const data = await GetBlogs()
             setBlogPost(data)
         }
+        getProfileUser()
         getData()
     }, [])
 
     useEffect(() => {
-        if(selection !== ''){
+        if(selection !== '---------------------------'){
             const getType = async() => {
                 const res = await GetBlogByType(selection)
                 setShowBlog(res) 
-                setSelection('')
+                setSelection('---------------------------')
             }
             getType(selection)
         }
@@ -58,7 +64,7 @@ const Blog = (props) => {
     const handleBlog = (e) => {        
         setSelection(e.target.name)
     }
-
+    
     return(
         <div className='blog'>
             <Card className="position-absolute top-50 start-50 translate-middle" style={{ padding: '20px', maxWidth: '60%', opacity: '85%'}}>
@@ -100,20 +106,21 @@ const Blog = (props) => {
             </Card >
             <div className='d-flex justify-content-center' style={{marginTop: '40em', maxWidth: '60%'}}>
                 {blogItems.map((menu, index) => (
-                    <BlogMenu  items={menu} key={index} handleBlog={handleBlog} />
+                    <BlogMenu  items={menu} key={index} handleBlog={(e) => handleBlog(e)} />
                 ))}
                 <div style={{marginTop: '2em'}}>
                     {showBlog.length ?
                     showBlog.map((blog, i) => (
-                    <BlogCard key={i} blog={blog}/>))
+                    <BlogCard key={i} blog={blog} profileUser={profileUser}/>))
                     :   blogPost.map((blog, i) => (
-                        <BlogCard key={i} blog={blog} user={props.user}/>))
+                        <BlogCard key={i} blog={blog} profileUser={profileUser}/>))
                     }
                 </div>  
                 
             </div>
         </div>
     )
+    
 }
 
 export default Blog

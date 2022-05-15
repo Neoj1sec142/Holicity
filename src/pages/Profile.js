@@ -39,7 +39,6 @@ const Profile = (props) => {
         const getFollowing = async () => {
             if (profileUser) {
                 const amFollowing = await GetFollowingByFollower(profileUser)
-                console.log(amFollowing, 'THIS ONE')
                 setFollowing(amFollowing)
             }
         }
@@ -102,12 +101,7 @@ const Profile = (props) => {
                             :   <button onClick={(e) => handleClick(e)}>
                                     { btn ? 'Unfollow' : 'Follow'}
                                 </button>}
-                        {/* {props.user.id === parseInt(profileUser) 
-                        ?   <a href='http://localhost:3003' target='_blank' rel="noreferrer">Messenger</a>
-                        :   <div></div>
-                        } */}
                     </div>
-                    
                 </div>
                 </Card>
                 <Card className='d-flex flex-row justify-content-center'>

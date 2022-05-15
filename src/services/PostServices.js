@@ -10,7 +10,6 @@ export const GetPosts = async () => {
 export const GetPostDetail = async (id) => {
     try {
         const res = await Client.get(`/posts/${id}`)
-        // console.log(res, "RES")
         return res.data
     } catch (error) {throw error}
 }
@@ -18,7 +17,6 @@ export const GetPostDetail = async (id) => {
 export const GetPostByUser = async (id) => {
     try {
         const res = await Client.get(`/posts/user/${id}`)
-        // console.log(res, "res")
         return res.data
     } catch (err) {throw err}
 }
@@ -26,7 +24,6 @@ export const GetPostByUser = async (id) => {
 export const GetPostByType = async (type) => {
     try {
         const res = await Client.get(`/posts/${type}`)
-        // console.log(res, "res")
         return res.data
     } catch (err) {throw err}
 }

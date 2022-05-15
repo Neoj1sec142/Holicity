@@ -20,7 +20,7 @@ import Messenger from './pages/Messenger'
 import './styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/menu.css'
-// import hbackground from './assets/world_in_hand.jpeg'
+
 
 
 

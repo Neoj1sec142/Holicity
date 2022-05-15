@@ -1,5 +1,4 @@
 
-
 const BlogDrop = ({submenus, dropdown, handleBlog, setDropdown}) => {
   
   return (

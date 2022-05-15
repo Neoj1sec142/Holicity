@@ -3,7 +3,6 @@ import Client from './api'
 export const GetBlogs = async () => {
     try{
         const res = await Client.get('/blogs/')
-        // console.log(res, "SERVICES")
         return res.data
     }catch(err){throw err}
 }
@@ -11,7 +10,6 @@ export const GetBlogs = async () => {
 export const GetBlogDetail = async (id) => {
     try {
         const res = await Client.get(`/blogs/${id}`)
-        // console.log(res, "RES")
         return res.data
     } catch (error) {throw error}
 }
@@ -19,7 +17,6 @@ export const GetBlogDetail = async (id) => {
 export const GetBlogByUser = async (id) => {
     try {
         const res = await Client.get(`/blogs/user/${id}`)
-        // console.log(res, "res")
         return res.data
     } catch (err) {throw err}
 }
@@ -27,14 +24,12 @@ export const GetBlogByUser = async (id) => {
 export const GetBlogByType = async (type) => {
     try {
         const res = await Client.get(`/blogs/${type}`)
-        // console.log(res, "res")
         return res.data
     } catch (err) {throw err}
 }
 
 export const CreateBlog = async (user_id, blog) => {
     try{
-        // console.log(blog, "HERE")
         const data = {
             type: blog.type,
             thoughts: blog.thoughts,

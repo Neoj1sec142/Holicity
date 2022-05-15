@@ -8,7 +8,6 @@ const BlogMenu = ({items, user, handleBlog}) => {
   <div style={{maxWidth: '60%'}}>
    {items.submenu ? (
     <>
-    
     <div  id='pills-tabContent'>
      <button
          style={{marginLeft: '100%'}}
