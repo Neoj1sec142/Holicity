@@ -5,7 +5,7 @@ Holicity is a user based platform for social networking to promote a greener ear
 ![ERD](./client/src/assets/ERD%20Start.png)
 ***
 ## CHD:
-![CHD](./client/src/assets/CHD%20Start.png)
+![CHD](./client/src/assets/CHD%20End.png)
 ***
 ## WireFrame:
 ***
