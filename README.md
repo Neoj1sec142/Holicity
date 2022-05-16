@@ -1,8 +1,14 @@
 # Holicity
 Holicity is a user based platform for social networking to promote a greener earth. Once a User is registered and logged in they are able to create posts, blogs, and comment on others as well as follow and search users. There is also a global news page that updates shows top global news stories, as well as a messenger system comming soon to a theater near you. Getting started is easy just use the nav bar and direct yourself to the getting started page and then the settings page to browse the sites easily accessable pages. The world is yours.. be nice to it...
 ***
+# App OverView: 
+![feed](./src/assets/feed.png)
+![search](./src/assets/search.png)
+![details](./src/assets/details.png)
+![blog](./src/assets/blsc.png)
+***
 ## ERD: 
-![ERD](./src/assets/ERD%20Start.png)
+![ERD](./src/assets/ERDEnd.png)
 ***
 ## CHD:
 ![CHD](./src/assets/CHD%20End.png)
