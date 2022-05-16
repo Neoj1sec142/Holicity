@@ -55,3 +55,11 @@ export const GetFollowingByFollower = async (id) => {
         return res.data
       } catch (error) {throw error}
 }
+
+export const RemoveUser = async (id) => {
+    try{
+        await Client.delete(`users/${id}`)
+        .then((res) => console.log(res, "Successfully removed user"))
+        .catch((err) => console.log(err))
+    } catch (err) {throw err}
+}

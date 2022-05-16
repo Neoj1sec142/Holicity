@@ -9,7 +9,7 @@ const Home = () => {
   return (
     
     <div className="d-flex justify-content-center" >
-      <img src={logo} alt='home' class="home-logo"/>
+      <img src={logo} alt='home' className="home-logo"/>
       <Card className="position-absolute top-50 start-50 translate-middle" style={{maxWidth: '70%', padding: '30px', opacity: '85%'}}>
         <Card.Title className='glow'>~ Greener Earth Starts Here ~</Card.Title>
         <Card.Body>
