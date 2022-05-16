@@ -9,6 +9,7 @@ export const allTypes = [
     'Gas Alternatives',
     'Green House Effect',
     'Just Spreading Love',
+    'Music',
     'Politics',
     'United Nations',
     'Soka Gakkai International',

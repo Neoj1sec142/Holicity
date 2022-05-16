@@ -15,6 +15,9 @@ export const blogItems = [
          title: 'Green House Effect'
         },
         {
+         title: 'Music'
+        },
+        {
          title: 'Recyclable Alternative'
         },
         {
