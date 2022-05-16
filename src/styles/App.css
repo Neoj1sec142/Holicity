@@ -83,3 +83,26 @@ html {
 .img-thumbnail{
   border-radius: 50%;;
 }
+
+.glow{
+  font-size: 20px;
+  color: rgb(18, 17, 17);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e6ad00, 0 0 40px #e6ad00, 0 0 50px #e6ad00, 0 0 60px #e6ad00, 0 0 70px #e6ad00;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #29b03d, 0 0 40px #29b03d, 0 0 50px  #29b03d, 0 0 60px #29b03d, 0 0 70px #29b03d, 0 0 80px #29b03d;
+  }
+}
+.home-logo{
+  max-width: 25em;
+  opacity: 80%;
+  border-radius: 10px;
+}

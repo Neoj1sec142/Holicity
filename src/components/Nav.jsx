@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { menuItems } from "./menuItem";
 import MenuItems from './MenuItems'
+import logo from '../assets/hol-logo.png'
 
 const Nav = ({ authenticated, user, handleLogOut, props }) => {
   let authenticatedOptions
@@ -9,6 +10,7 @@ const Nav = ({ authenticated, user, handleLogOut, props }) => {
       
       <section className='navbar navbar-expand-xl navbar-dark bg-dark fixed-bottom'>
         <nav id='navbar' className='d-flex flex-row justify-content-around' role='navigation'>
+          
           <h3>Logged in as </h3>
             <nav className='menu'>
               <ul className="menus" >
@@ -18,12 +20,7 @@ const Nav = ({ authenticated, user, handleLogOut, props }) => {
                 </Link>
                 <Link to="/">
                   <div className="d-flex flex-end" alt="logo">
-                    <img
-                      style={{maxWidth: '40px'}}
-                      className="position-right"
-                      src="https://avatars.dicebear.com/api/jdenticon/app.svg"
-                      alt="welcome banner"
-                    />
+                    <img src={logo} alt='no_img' style={{maxWidth: '120px', opacity: '60%'}} />
                   </div>
                 </Link>
               </ul>
