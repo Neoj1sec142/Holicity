@@ -32,7 +32,7 @@ const Nav = ({ authenticated, user, handleLogOut, props }) => {
 
   const publicOptions = (
     <nav className='d-flex justify-content-start' style={{marginLeft: '2em', marginTop: '1em'}}>
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
     </nav>
   )
 
