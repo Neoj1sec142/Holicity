@@ -74,7 +74,7 @@ const Details = () => {
                             onChange={handleChange}
                             name='title'
                             value={comment.title}
-                            placeholder="Add your thoughts..."
+                            placeholder="Give your contribution a title..."
                         />
                         <ReactStars
                             onChange={handleStars}
